@@ -1,0 +1,7 @@
+# Local and generated files
+.claude/
+skills-lock.json
+*.backup-*.html
+*.zip
+Thumbs.db
+.DS_Store

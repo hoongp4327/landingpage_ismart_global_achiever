@@ -1,0 +1,2407 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>iSMART Global Achievers | Tiếng Anh trực tuyến chuẩn quốc tế cho học sinh THCS</title>
+  <meta name="description" content="iSMART Global Achievers giúp học sinh THCS phát triển tiếng Anh toàn diện theo chuẩn CEFR với lớp học trực tuyến, AI và hệ sinh thái học tập 24/7.">
+  <meta name="theme-color" content="#030B26">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="vi_VN">
+  <meta property="og:site_name" content="iSMART Education">
+  <meta property="og:title" content="iSMART Global Achievers | Tiếng Anh trực tuyến chuẩn quốc tế cho học sinh THCS">
+  <meta property="og:description" content="Lộ trình A1 → B2 theo chuẩn CEFR, lớp học trực tuyến cùng giáo viên đạt chuẩn và hệ sinh thái học tập AI 24/7.">
+  <meta property="og:image" content="assets/generated/hero-neon-background.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23f24722'/%3E%3Cpath d='M23 18h10L26 46H16l7-28Zm15 8h10l-5 20H33l5-20Z' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block" rel="stylesheet">
+
+  <style>
+  /* ============================================================
+     iSMART GLOBAL ACHIEVERS — landing page
+     Design system: "Calibrated light"
+     Light is information: cyan edge-light marks only what matters
+     (the B2 destination, hover, primary CTA). Everything else is
+     matte navy with hairline borders.
+     ============================================================ */
+
+  /* --- 1. TOKENS ------------------------------------------- */
+  :root {
+    /* Deep field */
+    --abyss:      #030B26;
+    --navy-900:   #061334;
+    --navy-800:   #0B2050;
+    --navy-700:   #12305F;
+    --navy-600:   #1A427D;
+
+    /* Signal blues */
+    --blue-600:   #1653B8;
+    --blue-500:   #1E6BD8;
+    --blue-400:   #3B8EF5;
+    --cyan-400:   #35C6F4;
+    --cyan-300:   #6FDCFF;
+
+    /* Accents */
+    --lime:       #A7EF34;
+    /* --orange is the brand mark: display type, rules, tints.
+       --orange-ink is its AA-safe twin (4.8:1 on white) and is the only
+       one allowed under small text or behind white button labels. */
+    --orange:     #F24722;
+    --orange-ink: #D53410;
+    --orange-600: #B82909;
+    --gold:       #F4AD19;
+    --green:      #76B82A;
+
+    /* Light field */
+    --paper:      #FFFFFF;
+    --mist:       #F2F7FF;
+    --mist-deep:  #E7F0FD;
+    --ink:        #0A1B3D;
+    --slate:      #55688A;
+    --hairline:   #DCE7F5;
+
+    /* Edge & surface treatments */
+    --edge-dark:  rgba(107, 176, 255, .22);
+    --edge-lit:   rgba(111, 220, 255, .85);
+    --glow-lit:   0 0 0 1px rgba(111,220,255,.35), 0 0 34px rgba(53,198,244,.28);
+    --surface-dark: linear-gradient(165deg, rgba(26,66,125,.55), rgba(6,19,52,.75));
+
+    /* Elevation */
+    --lift-1: 0 1px 2px rgba(10,27,61,.04), 0 10px 28px rgba(10,27,61,.07);
+    --lift-2: 0 2px 4px rgba(10,27,61,.05), 0 22px 48px rgba(10,27,61,.12);
+
+    /* Geometry */
+    --r-sm: 10px;
+    --r-md: 16px;
+    --r-lg: 24px;
+    --r-pill: 999px;
+
+    /* Rhythm */
+    --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+    --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+    --sp-9: 88px; --sp-10: 120px;
+
+    /* Measure */
+    --w:       1240px;
+    --w-wide:  1440px;
+    --gutter:  20px;
+    --pad-y:   64px;
+
+    /* Type */
+    --display: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+    --body:    Inter, "Segoe UI", system-ui, sans-serif;
+
+    --t-display: clamp(2.6rem, 11vw, 3.6rem);
+    --t-h2:      clamp(1.85rem, 6.4vw, 2.4rem);
+    --t-h3:      1.0625rem;
+    --t-lead:    1rem;
+    --t-body:    .9375rem;
+    --t-small:   .875rem;
+    --t-eyebrow: .78125rem;
+  }
+
+  /* --- 2. RESET & BASE -------------------------------------- */
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--body);
+    font-size: var(--t-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body.nav-open { overflow: hidden; }
+
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  button, input, select, textarea { font: inherit; color: inherit; }
+  button { border: 0; background: none; }
+  h1, h2, h3, h4, p, ul, ol, figure { margin: 0; }
+  ul, ol { padding: 0; list-style: none; }
+
+  h1, h2, h3, h4 {
+    font-family: var(--display);
+    font-weight: 800;
+    line-height: 1.12;
+    letter-spacing: -.02em;
+  }
+
+  ::selection { background: var(--blue-500); color: #fff; }
+
+  :focus-visible {
+    outline: 2px solid var(--cyan-400);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: var(--sp-4);
+    top: -100px;
+    z-index: 200;
+    padding: 12px 20px;
+    background: var(--orange);
+    color: #fff;
+    border-radius: var(--r-sm);
+    font-weight: 600;
+    transition: top .2s ease;
+  }
+  .skip-link:focus { top: var(--sp-4); }
+
+  /* --- 3. LAYOUT PRIMITIVES --------------------------------- */
+  .wrap { width: min(var(--w), 100% - var(--gutter) * 2); margin-inline: auto; }
+  .wrap-wide { width: min(var(--w-wide), 100% - var(--gutter) * 2); margin-inline: auto; }
+
+  .band { padding-block: var(--pad-y); position: relative; }
+  .band-mist { background: var(--mist); }
+
+  /* Section header — one pattern used everywhere */
+  .head { max-width: 46rem; margin-bottom: var(--sp-6); }
+  .head-center { margin-inline: auto; text-align: center; }
+
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: var(--sp-3);
+    color: var(--orange-ink);
+    font-family: var(--body);
+    font-size: var(--t-eyebrow);
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 26px;
+    height: 3px;
+    flex: 0 0 auto;
+    border-radius: 2px;
+    background: currentColor;
+  }
+  .head-center .eyebrow { justify-content: center; }
+
+  .title { font-size: var(--t-h2); text-wrap: balance; }
+
+  .lead {
+    margin-top: var(--sp-4);
+    max-width: 60ch;
+    color: var(--slate);
+    font-size: var(--t-lead);
+    line-height: 1.7;
+  }
+  .head-center .lead { margin-inline: auto; }
+
+  /* --- 4. COMPONENTS ---------------------------------------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 52px;
+    padding-inline: 24px;
+    border-radius: var(--r-sm);
+    font-family: var(--body);
+    font-size: var(--t-small);
+    font-weight: 700;
+    letter-spacing: .01em;
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease,
+                background-color .2s ease, border-color .2s ease;
+  }
+  .btn .material-symbols-outlined { font-size: 20px; }
+
+  .btn-primary {
+    background: var(--orange-ink);
+    color: #fff;
+    box-shadow: 0 10px 24px rgba(242,71,34,.28);
+  }
+  .btn-primary:hover {
+    background: var(--orange-600);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 32px rgba(242,71,34,.36);
+  }
+
+  .btn-ghost {
+    border: 1px solid var(--edge-dark);
+    background: rgba(11,32,80,.5);
+    color: #fff;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+  .btn-ghost:hover {
+    border-color: var(--edge-lit);
+    background: rgba(26,66,125,.7);
+    transform: translateY(-2px);
+  }
+
+  .btn-sm { min-height: 44px; padding-inline: 18px; font-size: .8125rem; }
+  .btn-block { width: 100%; }
+
+  /* Icon medallion — shared by every card type on the page */
+  .medal {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: var(--mist-deep);
+    color: var(--blue-600);
+  }
+  .medal .material-symbols-outlined { font-size: 26px; }
+
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    line-height: 1;
+    user-select: none;
+  }
+
+  /* --- 5. HEADER -------------------------------------------- */
+  .masthead {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,.92);
+    border-bottom: 1px solid transparent;
+    -webkit-backdrop-filter: saturate(1.4) blur(16px);
+    backdrop-filter: saturate(1.4) blur(16px);
+    transition: border-color .25s ease, box-shadow .25s ease;
+  }
+  .masthead.is-stuck {
+    border-bottom-color: var(--hairline);
+    box-shadow: 0 8px 28px rgba(10,27,61,.07);
+  }
+  .masthead-inner {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-4);
+    min-height: 68px;
+  }
+  .brand { flex: 0 0 auto; }
+  .brand img { width: 102px; height: auto; }
+
+  .nav {
+    display: none;
+    margin-left: auto;
+    gap: var(--sp-6);
+  }
+  /* :not(.btn) everywhere — the sheet's CTA is a button, not a nav link,
+     and must keep its own colour, padding and border. */
+  .nav a:not(.btn) {
+    position: relative;
+    padding-block: 4px;
+    font-size: var(--t-small);
+    font-weight: 600;
+    color: var(--ink);
+    transition: color .2s ease;
+  }
+  .nav a:not(.btn)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--orange);
+    transition: width .25s ease;
+  }
+  .nav a:not(.btn):hover { color: var(--orange-ink); }
+  .nav a:not(.btn):hover::after { width: 100%; }
+
+  .masthead-cta { display: none; margin-left: auto; }
+
+  .nav-toggle {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    margin-left: auto;
+    border-radius: var(--r-sm);
+    background: var(--mist);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .nav-toggle .material-symbols-outlined { font-size: 26px; }
+
+  /* Mobile nav sheet */
+  .nav.is-open {
+    position: fixed;
+    inset: 68px 0 auto;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    max-height: calc(100dvh - 68px);
+    overflow-y: auto;
+    margin: 0;
+    padding: var(--sp-3) var(--gutter) var(--sp-6);
+    background: var(--paper);
+    border-bottom: 1px solid var(--hairline);
+    box-shadow: var(--lift-2);
+  }
+  .nav.is-open a:not(.btn) {
+    padding-block: 15px;
+    border-bottom: 1px solid var(--hairline);
+    font-size: 1rem;
+  }
+  .nav.is-open a:not(.btn)::after { display: none; }
+  .nav-sheet-cta { margin-top: var(--sp-4); }
+
+  /* --- 6. HERO ---------------------------------------------- */
+  /* Hero and metrics share one continuous background stage */
+  .stage {
+    position: relative;
+    isolation: isolate;
+    background: var(--abyss) url("assets/generated/hero-stage-background.png") center / cover no-repeat;
+    color: #fff;
+  }
+  /* This artwork runs pale blue almost everywhere (measured 1.5–6:1 for
+     white text, worst in the exact column the copy sits in) — there's no
+     natural dark refuge like the previous background had. The scrim pools
+     hardest over the text column (upper-left) and only lets the globe on
+     the right show through with a light touch. */
+  .stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      radial-gradient(64% 58% at 16% 20%,
+        rgba(2,8,28,.88), rgba(2,8,28,.58) 60%, transparent 82%),
+      linear-gradient(102deg,
+        rgba(2,8,28,.9) 0%,
+        rgba(2,8,28,.76) 20%,
+        rgba(2,8,28,.46) 40%,
+        rgba(2,8,28,.16) 58%,
+        rgba(2,8,28,0) 74%),
+      linear-gradient(180deg,
+        rgba(2,8,28,.32) 0%,
+        rgba(2,8,28,.04) 26%,
+        rgba(2,8,28,.14) 58%,
+        rgba(2,8,28,.6) 100%);
+  }
+
+  .hero { padding-block: var(--sp-7); }
+  .hero-grid { display: grid; gap: var(--sp-6); align-items: center; }
+
+  .hero h1 {
+    font-size: var(--t-display);
+    font-weight: 800;
+    line-height: .92;
+    letter-spacing: -.035em;
+    text-wrap: balance;
+  }
+  .hero h1 .mark-parent {
+    display: block;
+    margin-bottom: .5em;
+    font-size: .26em;
+    font-weight: 700;
+    letter-spacing: .3em;
+    line-height: 1;
+    color: rgba(190,220,255,.72);
+  }
+  .hero h1 .mark-global { display: block; color: var(--lime); }
+  .hero h1 .mark-achievers { display: block; color: #fff; }
+
+  .hero-copy {
+    margin-top: var(--sp-5);
+    max-width: 34rem;
+    color: rgba(224,238,255,.82);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  /* Cognia credential plate */
+  .credential {
+    display: grid;
+    grid-template-columns: 64px minmax(0, 1fr);
+    gap: var(--sp-4);
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: var(--sp-5);
+    padding: 12px 20px 12px 12px;
+    background: rgba(9,26,66,.62);
+    border: 1px solid var(--edge-dark);
+    border-left: 3px solid var(--cyan-400);
+    border-radius: var(--r-md);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+  .credential img { width: 64px; height: 58px; object-fit: contain; }
+  .credential strong {
+    display: block;
+    font-family: var(--display);
+    font-size: .8125rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: .01em;
+  }
+  .credential strong em { color: var(--lime); font-style: normal; }
+  .credential span {
+    display: block;
+    margin-top: 3px;
+    color: rgba(206,226,255,.8);
+    font-size: .8125rem;
+    line-height: 1.45;
+  }
+
+  .hero-actions {
+    display: grid;
+    gap: var(--sp-3);
+    margin-top: var(--sp-6);
+  }
+
+  .hero-visual { position: relative; }
+  .hero-visual > img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 24px 44px rgba(0,72,180,.34));
+  }
+
+  /* Feature notes — in flow on mobile, floated on desktop */
+  .hero-notes {
+    display: grid;
+    gap: var(--sp-3);
+    margin-top: var(--sp-4);
+  }
+  .note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    background: rgba(9,26,66,.68);
+    border: 1px solid var(--edge-dark);
+    border-radius: var(--r-md);
+    font-family: var(--display);
+    font-size: .8125rem;
+    font-weight: 700;
+    line-height: 1.35;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+  .note .medal {
+    width: 38px;
+    height: 38px;
+    background: rgba(255,255,255,.94);
+  }
+  .note .medal .material-symbols-outlined { font-size: 21px; }
+  .note-mic .medal { color: var(--orange); }
+  .note-cefr .medal { color: var(--blue-600); }
+
+  /* --- 7. METRICS ------------------------------------------- */
+  /* The stats are a separate instrument sitting on the stage, not a
+     continuation of the hero — hence the plate, the gap above it, and the
+     ruled top edge that echoes the CEFR scale further down the page. */
+  .metrics { padding-block: 0 var(--sp-7); }
+
+  .metric-plate {
+    position: relative;
+    padding: var(--sp-6) var(--sp-3) var(--sp-4);
+    background: rgba(2,8,28,.72);
+    border: 1px solid var(--edge-dark);
+    border-radius: var(--r-lg);
+    box-shadow: 0 24px 60px rgba(1,8,30,.5);
+    -webkit-backdrop-filter: blur(16px) saturate(1.15);
+    backdrop-filter: blur(16px) saturate(1.15);
+  }
+
+  /* Ruled edge: a lit hairline with tick marks hanging off it */
+  .plate-scale {
+    position: absolute;
+    left: var(--sp-5);
+    right: var(--sp-5);
+    top: -1px;
+    height: 9px;
+    pointer-events: none;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 16%, #000 84%, transparent);
+  }
+  .plate-scale::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 1px;
+    background: var(--cyan-400);
+    box-shadow: 0 0 12px rgba(53,198,244,.7);
+  }
+  .plate-scale::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg,
+      rgba(111,220,255,.6) 0 1px, transparent 1px 15px);
+    -webkit-mask-image: linear-gradient(180deg, #000, transparent);
+    mask-image: linear-gradient(180deg, #000, transparent);
+  }
+
+  .metrics h2 {
+    margin-bottom: var(--sp-5);
+    text-align: center;
+    font-size: clamp(1.5rem, 5.4vw, 2rem);
+    letter-spacing: -.015em;
+  }
+  .metric-grid { display: grid; gap: 0; }
+  .metric {
+    padding: var(--sp-5) var(--sp-4);
+    text-align: center;
+  }
+  .metric + .metric { border-top: 1px solid var(--edge-dark); }
+  .metric dt {
+    font-family: var(--display);
+    font-size: clamp(2.5rem, 10vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.04em;
+    color: var(--gold);
+    font-variant-numeric: tabular-nums;
+  }
+  .metric dd {
+    margin: var(--sp-3) 0 0;
+    color: rgba(220,235,255,.86);
+    font-size: var(--t-small);
+    line-height: 1.5;
+  }
+
+  /* --- 8. CONCERNS ------------------------------------------ */
+  .concerns-grid { display: grid; gap: var(--sp-6); align-items: center; }
+
+  .concerns-photo { position: relative; margin: 0; }
+  .concerns-photo img.portrait {
+    width: 100%;
+    max-width: 320px;
+    margin-inline: auto;
+    height: auto;
+  }
+  .concerns-photo .decor {
+    position: absolute;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+  }
+  .decor-star  { width: 68px; left: 0;     bottom: -16px; }
+  .decor-orbit { width: 128px; right: -18px; top: -48px; }
+
+  .photo-right { display: none; }
+
+  .concerns .title strong {
+    display: block;
+    margin-top: .18em;
+    font-size: .74em;
+    font-weight: 700;
+    color: var(--slate);
+  }
+  .concerns .title strong b { color: var(--orange); font-weight: 800; }
+
+  .questions { display: grid; gap: var(--sp-3); margin-top: var(--sp-5); }
+  .question {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: var(--sp-4);
+    align-items: center;
+    padding: var(--sp-4);
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-left: 3px solid var(--q-accent, var(--blue-500));
+    border-radius: var(--r-md);
+    box-shadow: var(--lift-1);
+  }
+  .question:nth-child(1) { --q-accent: var(--orange); }
+  .question:nth-child(2) { --q-accent: var(--gold); }
+  .question:nth-child(3) { --q-accent: var(--blue-500); }
+
+  .question .medal {
+    width: 40px;
+    height: 40px;
+    background: color-mix(in srgb, var(--q-accent) 12%, transparent);
+    color: var(--q-accent);
+  }
+  .question .medal .material-symbols-outlined { font-size: 22px; }
+  .question p { font-size: var(--t-small); line-height: 1.5; }
+  .question p b { font-weight: 700; color: var(--ink); }
+
+  .bridge {
+    margin-top: var(--sp-5);
+    padding: var(--sp-4) var(--sp-5);
+    background: var(--mist);
+    border-left: 4px solid var(--orange);
+    border-radius: 0 var(--r-md) var(--r-md) 0;
+    color: var(--slate);
+    font-size: var(--t-small);
+    line-height: 1.65;
+  }
+  .bridge strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--ink);
+    font-family: var(--display);
+    font-weight: 800;
+  }
+
+  /* --- 9. OUTCOMES ------------------------------------------ */
+  /* The heading is a supplied brand lockup, not live text. The asset is
+     pre-trimmed to its content box, so width here is the visual width. */
+  .outcomes-title { line-height: 0; }
+  .outcomes-title img {
+    width: 100%;
+    max-width: 560px;
+    height: auto;
+    margin-inline: auto;
+  }
+
+  /* Dark cards on a light band: the page's contrast device */
+  .outcome-grid {
+    display: grid;
+    gap: var(--sp-3);
+    margin-top: var(--sp-6);
+  }
+  .outcome {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: var(--sp-4);
+    align-items: center;
+    padding: var(--sp-4);
+    background: var(--navy-900) url("assets/generated/hero-neon-background.jpg") center bottom / cover no-repeat;
+    border: 1px solid var(--edge-dark);
+    border-radius: var(--r-md);
+    color: #fff;
+    box-shadow: 0 10px 26px rgba(6,28,90,.18);
+    transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, border-color .28s ease;
+  }
+  .outcome:hover {
+    transform: translateY(-4px);
+    border-color: var(--edge-lit);
+    box-shadow: 0 18px 38px rgba(6,28,90,.26), 0 0 28px rgba(53,198,244,.24);
+  }
+  .outcome .medal {
+    width: 52px;
+    height: 52px;
+    background: rgba(255,255,255,.95);
+    color: var(--navy-800);
+  }
+  .outcome h3 {
+    font-size: .9375rem;
+    font-weight: 700;
+    line-height: 1.45;
+    letter-spacing: -.005em;
+  }
+  .outcome h3 br { display: none; }
+
+  /* --- 10. CEFR LADDER — the signature ---------------------- */
+  .ladder-band {
+    background: var(--navy-900) url("assets/generated/pathway-tech-background.png") center / cover no-repeat;
+    color: #fff;
+    isolation: isolate;
+  }
+  .ladder-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(180deg, rgba(4,14,42,.82), rgba(4,14,42,.6) 45%, rgba(4,14,42,.9));
+  }
+  .ladder-band .eyebrow { color: var(--gold); }
+  .ladder-band .eyebrow::before { background: var(--gold); }
+
+  .ladder-title { font-size: clamp(2rem, 8vw, 2.75rem); line-height: 1; }
+  .ladder-title .lt-parent {
+    display: block;
+    margin-bottom: .55em;
+    font-size: .3em;
+    font-weight: 700;
+    letter-spacing: .3em;
+    color: rgba(190,220,255,.72);
+  }
+  .ladder-title .lt-global { display: block; color: var(--lime); }
+  .ladder-title .lt-achievers { display: block; color: #fff; }
+  .ladder-title .lt-stage {
+    display: inline-flex;
+    align-items: center;
+    margin-top: .5em;
+    padding: 8px 20px;
+    border: 1px solid var(--edge-dark);
+    border-radius: var(--r-sm);
+    background: rgba(11,32,80,.55);
+    font-size: .3em;
+    letter-spacing: .22em;
+    line-height: 1;
+  }
+
+  .ladder-lead {
+    margin-top: var(--sp-5);
+    padding-left: var(--sp-4);
+    border-left: 2px solid var(--gold);
+    color: rgba(224,238,255,.82);
+    font-size: var(--t-small);
+    line-height: 1.75;
+  }
+
+  /* The scale itself */
+  .ladder {
+    position: relative;
+    display: grid;
+    gap: var(--sp-5);
+    margin-top: var(--sp-8);
+    --rung-accent: var(--lime);
+  }
+
+  .rung { display: flex; flex-direction: column; }
+
+  .rung-card {
+    position: relative;
+    padding: var(--sp-6) var(--sp-4) var(--sp-4);
+    text-align: center;
+    background: var(--surface-dark);
+    border: 1px solid var(--edge-dark);
+    border-radius: var(--r-md);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+  }
+  .rung:hover .rung-card {
+    transform: translateY(-5px);
+    border-color: rgba(167,239,52,.5);
+    box-shadow: 0 0 26px rgba(167,239,52,.16);
+  }
+
+  /* Badge straddling the card's top edge */
+  .rung-icon {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    transform: translate(-50%, -58%);
+    color: #fff;
+    background: linear-gradient(180deg, #123572, #071f4d);
+    border: 1px solid rgba(132,181,255,.5);
+    border-radius: 7px 7px 17px 17px;
+    box-shadow: 0 10px 24px rgba(0,7,31,.42);
+  }
+  .rung-icon .material-symbols-outlined { font-size: 25px; }
+
+  .rung-code {
+    font-family: var(--display);
+    font-size: 2.25rem;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.03em;
+    color: var(--rung-accent);
+  }
+  .rung-card h3 {
+    margin-top: var(--sp-2);
+    font-size: .8125rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: .04em;
+    color: #fff;
+  }
+  /* Short gold rule separating the name from the figures */
+  .rung-card h3::after {
+    content: "";
+    display: block;
+    width: 34px;
+    height: 2px;
+    margin: var(--sp-4) auto 0;
+    border-radius: 2px;
+    background: var(--gold);
+  }
+  .rung-meta {
+    display: grid;
+    gap: 7px;
+    margin-top: var(--sp-4);
+    color: rgba(214,232,255,.88);
+    font-size: .8125rem;
+  }
+  .rung-meta span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+  }
+  .rung-meta .material-symbols-outlined { font-size: 18px; color: rgba(255,255,255,.7); }
+
+  /* Stem + dot: only drawn once the scale runs horizontally */
+  .rung-stem { display: none; }
+
+  .ladder-goal {
+    display: flex;
+    align-items: center;
+    gap: var(--sp-3);
+    width: fit-content;
+    max-width: 100%;
+    margin-top: var(--sp-6);
+    padding: 14px 20px;
+    background: rgba(4,16,48,.6);
+    border: 1px solid rgba(244,173,25,.55);
+    border-radius: var(--r-md);
+    font-size: var(--t-small);
+    font-weight: 600;
+  }
+  .ladder-goal .material-symbols-outlined { font-size: 26px; color: var(--gold); }
+  .ladder-goal strong { color: var(--gold); font-weight: 800; }
+
+  /* --- 11. ECOSYSTEM ---------------------------------------- */
+  .eco-grid {
+    position: relative;
+    display: grid;
+    gap: var(--sp-4);
+    margin-top: var(--sp-6);
+  }
+  .eco-rail { display: none; }
+
+  .eco-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--sp-4);
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-md);
+    box-shadow: var(--lift-1);
+    transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+  }
+  .eco-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue-400);
+    box-shadow: var(--lift-2);
+  }
+  /* display:block (not grid) so the img's height:100% resolves against a
+     definite box — object-fit already handles centring. */
+  .eco-figure {
+    display: block;
+    height: 158px;
+    margin-bottom: var(--sp-4);
+  }
+  /* width+height both pinned so the img can never outgrow the frame —
+     the intrinsic size from the HTML attributes would otherwise win. */
+  .eco-figure img { width: 100%; height: 100%; object-fit: contain; }
+  .eco-body { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: var(--sp-3); }
+  .eco-body .medal { width: 44px; height: 44px; background: #FFF0EC; color: var(--orange); }
+  /* The source SVGs ship black; recolour them to the brand orange. */
+  .eco-body .medal img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: invert(37%) sepia(95%) saturate(3568%) hue-rotate(350deg) brightness(104%) contrast(102%);
+  }
+  .eco-card h3 { font-size: var(--t-h3); }
+  .eco-card p { margin-top: 5px; color: var(--slate); font-size: var(--t-small); line-height: 1.6; }
+
+  .eco-loop {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: var(--sp-6);
+    color: var(--orange-ink);
+    font-family: var(--display);
+    font-size: 1rem;
+    font-weight: 800;
+    text-align: center;
+  }
+  .eco-loop .material-symbols-outlined { font-size: 22px; }
+
+  /* --- 12. ACES --------------------------------------------- */
+  .aces-grid { display: grid; gap: var(--sp-6); align-items: center; }
+
+  .cycle {
+    position: relative;
+    display: grid;
+    gap: var(--sp-4);
+  }
+  .cycle-orbit, .cycle-hub { display: none; }
+
+  .step {
+    position: relative;
+    padding: var(--sp-5) var(--sp-4) var(--sp-4);
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-top: 3px solid var(--step-accent);
+    border-radius: var(--r-md);
+    box-shadow: var(--lift-1);
+    transition: transform .28s ease, box-shadow .28s ease;
+  }
+  .step:hover { transform: translateY(-5px); box-shadow: var(--lift-2); }
+
+  .aces-mark { color: var(--green); }
+
+  .step-1 { --step-accent: var(--gold); }
+  .step-2 { --step-accent: var(--cyan-400); }
+  .step-3 { --step-accent: var(--green); }
+  .step-4 { --step-accent: var(--orange); }
+
+  .step-head {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: var(--sp-3);
+    align-items: center;
+    margin-bottom: var(--sp-3);
+  }
+  .step-num {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: var(--r-sm);
+    background: color-mix(in srgb, var(--step-accent) 14%, transparent);
+    color: var(--step-accent);
+    font-family: var(--display);
+    font-size: 1.125rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .step-head img { width: 100%; height: 92px; object-fit: contain; object-position: center bottom; }
+
+  .step-body { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: var(--sp-3); }
+  .step-body .medal {
+    width: 40px;
+    height: 40px;
+    background: color-mix(in srgb, var(--step-accent) 14%, transparent);
+    color: var(--step-accent);
+  }
+  .step-body .medal .material-symbols-outlined { font-size: 22px; }
+  .step h3 { font-size: var(--t-h3); color: var(--step-accent); }
+  .step p { margin-top: 3px; color: var(--slate); font-size: var(--t-small); line-height: 1.55; }
+
+  .cycle-caption {
+    margin-top: var(--sp-5);
+    color: var(--ink);
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: var(--t-small);
+  }
+
+  /* --- 13. TEACHERS ----------------------------------------- */
+  .teachers-grid { display: grid; gap: var(--sp-6); align-items: center; }
+  .teachers .title span { display: block; color: var(--orange); }
+
+  .faculty {
+    position: relative;
+    display: grid;
+    gap: var(--sp-5);
+    justify-items: center;
+  }
+  .faculty-ring { display: none; }
+  .faculty figure { margin: 0; width: 100%; max-width: 244px; }
+  .faculty img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 16px 38px rgba(11,65,163,.22);
+    transition: transform .3s ease, box-shadow .3s ease;
+  }
+  .faculty figure:hover img {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 48px rgba(11,65,163,.3);
+  }
+
+  /* --- 14. REGISTER ----------------------------------------- */
+  .register-grid { display: grid; gap: var(--sp-6); align-items: start; }
+  .register .title span { display: block; color: var(--orange); }
+
+  .perks { display: grid; gap: var(--sp-3); margin-top: var(--sp-5); }
+  .perks li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: var(--t-small);
+    font-weight: 600;
+  }
+  .perks .medal {
+    width: 32px;
+    height: 32px;
+    background: #FFF0EC;
+    color: var(--orange);
+  }
+  .perks .medal .material-symbols-outlined { font-size: 19px; }
+
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--sp-3) var(--sp-5);
+    margin-top: var(--sp-5);
+    font-weight: 700;
+    font-size: var(--t-small);
+  }
+  .contact a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 32px;          /* WCAG 2.5.8 target size */
+    transition: color .2s ease;
+  }
+  .contact a:hover { color: var(--orange-ink); }
+  .contact .material-symbols-outlined { font-size: 20px; color: var(--orange-ink); }
+
+  .form-panel {
+    padding: var(--sp-5);
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-lg);
+    box-shadow: var(--lift-2);
+  }
+  .form-panel h3 { font-size: 1.25rem; margin-bottom: var(--sp-5); }
+
+  .form-grid { display: grid; gap: var(--sp-4); }
+
+  .field label,
+  .fieldset-label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: .8125rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .req { color: var(--orange); }
+
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    background: #FBFDFF;
+    border: 1px solid #CBDBEE;
+    border-radius: var(--r-sm);
+    outline: none;
+    transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+  }
+  .field textarea { min-height: 84px; resize: vertical; }
+  .field input::placeholder, .field textarea::placeholder { color: #93A6C0; }
+  .field input:hover, .field select:hover, .field textarea:hover { border-color: #A9C4E4; }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    background: var(--paper);
+    border-color: var(--blue-500);
+    box-shadow: 0 0 0 4px rgba(30,107,216,.13);
+  }
+  .field[data-invalid] input { border-color: var(--orange); background: #FFF7F5; }
+  .field[data-invalid] input:focus { box-shadow: 0 0 0 4px rgba(242,71,34,.14); }
+
+  .field-error {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    margin-top: 6px;
+    color: var(--orange-600);
+    font-size: .8125rem;
+    font-weight: 500;
+  }
+  .field-error .material-symbols-outlined { font-size: 16px; }
+  .field[data-invalid] .field-error { display: flex; }
+
+  .choice-set { border: 0; padding: 0; margin: 0; }
+  .choice-grid { display: grid; gap: var(--sp-3); }
+  .choice { position: relative; }
+  .choice input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .choice label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 60px;
+    margin: 0;
+    padding: 12px 16px;
+    border: 1px solid #CBDBEE;
+    border-radius: var(--r-sm);
+    cursor: pointer;
+    font-size: .8125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: border-color .2s ease, background-color .2s ease, color .2s ease;
+  }
+  .choice label::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    border: 2px solid #B4C8E0;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 4px #fff;
+    transition: background-color .2s ease, border-color .2s ease;
+  }
+  .choice label:hover { border-color: #A9C4E4; }
+  .choice input:checked + label {
+    border-color: var(--orange);
+    background: #FFF3F0;
+    color: var(--orange-600);
+  }
+  .choice input:checked + label::before {
+    background: var(--orange);
+    border-color: var(--orange);
+  }
+  .choice input:focus-visible + label {
+    outline: 2px solid var(--cyan-400);
+    outline-offset: 2px;
+  }
+
+  .form-submit { margin-top: var(--sp-2); }
+  .form-note {
+    margin-top: var(--sp-3);
+    color: var(--slate);
+    font-size: .8125rem;
+    text-align: center;
+  }
+
+  .form-done { display: none; padding: var(--sp-6) var(--sp-4); text-align: center; }
+  .form-done .medal {
+    width: 64px;
+    height: 64px;
+    margin-inline: auto;
+    margin-bottom: var(--sp-4);
+    background: #76B82A;
+    color: #fff;
+  }
+  .form-done .medal .material-symbols-outlined { font-size: 36px; }
+  .form-done h3 { margin-bottom: var(--sp-2); }
+  .form-done p { color: var(--slate); font-size: var(--t-small); }
+
+  /* --- 15. FOOTER ------------------------------------------- */
+  .footer {
+    padding-block: var(--sp-8) var(--sp-5);
+    background: var(--abyss);
+    color: rgba(200,218,244,.72);
+    font-size: var(--t-small);
+  }
+  .footer-grid { display: grid; gap: var(--sp-6); }
+  .footer-logo {
+    width: 176px;
+    padding: 10px;
+    background: #fff;
+    border-radius: var(--r-sm);
+  }
+  .footer p { margin-top: var(--sp-4); max-width: 34rem; line-height: 1.7; }
+  .footer p strong { color: #fff; }
+  .footer h4 {
+    margin-bottom: var(--sp-4);
+    color: #fff;
+    font-size: .8125rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .footer ul { display: grid; gap: 4px; }
+  .footer li { display: flex; align-items: center; min-height: 30px; }
+  .footer a { display: inline-flex; align-items: center; min-height: 26px; transition: color .2s ease; }
+  .footer a:hover { color: var(--cyan-300); }
+  .footer strong.hot { color: #fff; }
+  .footer-base {
+    margin-top: var(--sp-7);
+    padding-top: var(--sp-5);
+    border-top: 1px solid rgba(255,255,255,.1);
+    text-align: center;
+    font-size: .8125rem;
+    color: rgba(200,218,244,.55);
+  }
+
+  /* --- 16. STICKY MOBILE CTA -------------------------------- */
+  .dock {
+    position: fixed;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    z-index: 90;
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    gap: var(--sp-2);
+  }
+  .dock a { box-shadow: 0 12px 32px rgba(6,29,75,.28); }
+  .dock .dock-call {
+    display: grid;
+    place-items: center;
+    min-height: 52px;
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: var(--r-sm);
+    color: var(--ink);
+  }
+  .dock .dock-call .material-symbols-outlined { font-size: 24px; }
+  body { padding-bottom: 76px; }
+
+  /* --- 17. MOTION ------------------------------------------- */
+  /* Content is visible by default; JS opts in to the reveal so the
+     page is never blank if the script fails. */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity .65s cubic-bezier(.2,.7,.3,1),
+                transform .65s cubic-bezier(.2,.7,.3,1);
+  }
+  .js .reveal.is-in { opacity: 1; transform: none; }
+
+  /* ============================================================
+     18. RESPONSIVE — mobile-first, three breakpoints, no overlap
+     ============================================================ */
+
+  /* ---- ≥ 640px : two-up grids, roomier rhythm ---- */
+  @media (min-width: 640px) {
+    :root {
+      --gutter: 28px;
+      --pad-y: 80px;
+      --t-display: clamp(3.4rem, 8vw, 4.4rem);
+      --t-h2: clamp(2.2rem, 4.4vw, 2.75rem);
+      --t-lead: 1.0625rem;
+      --t-body: .96875rem;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; }
+    .hero-notes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .metric-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .metric + .metric { border-top: 0; border-left: 1px solid var(--edge-dark); }
+
+    .outcome-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .ladder { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-4); }
+    .cycle { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    /* Ecosystem cards turn horizontal before they go three-across,
+       so the copy never gets squeezed into a 180px column. */
+    .eco-card { flex-direction: row; align-items: center; gap: var(--sp-5); }
+    .eco-figure { flex: 0 0 36%; height: 186px; margin-bottom: 0; }
+    .eco-body { flex: 1 1 auto; }
+    .choice-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .form-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .field-span { grid-column: 1 / -1; }
+    .form-panel { padding: var(--sp-6); }
+
+    .faculty { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .faculty figure { max-width: 260px; }
+    .faculty figure:nth-child(3) { grid-column: 1 / -1; }
+
+    .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .footer-grid > :first-child { grid-column: 1 / -1; }
+  }
+
+  /* ---- ≥ 900px : the desktop layout comes together ---- */
+  @media (min-width: 900px) {
+    :root {
+      --gutter: 40px;
+      --pad-y: 104px;
+      --t-display: clamp(4rem, 5.6vw, 5.4rem);
+      --t-h2: clamp(2.5rem, 3.4vw, 3.25rem);
+      --t-h3: 1.125rem;
+      --t-lead: 1.125rem;
+      --t-body: 1rem;
+    }
+
+    body { padding-bottom: 0; }
+    .dock { display: none; }
+    .head-center { max-width: 58rem; }
+
+    /* Header */
+    .masthead-inner { min-height: 80px; gap: var(--sp-7); }
+    .brand img { width: 124px; }
+    .nav { display: flex; margin-left: auto; align-items: center; }
+    .nav-toggle { display: none; }
+    /* The sheet's CTA is a mobile-only duplicate of .masthead-cta */
+    .nav-sheet-cta { display: none; }
+    .masthead-cta { display: inline-flex; margin-left: 0; }
+
+    /* Scroll offset for the sticky header */
+    :target { scroll-margin-top: 96px; }
+    section[id] { scroll-margin-top: 96px; }
+
+    /* Hero */
+    .hero { padding-block: var(--sp-8); }
+    .hero-grid {
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+      gap: var(--sp-7);
+    }
+    .hero-copy { font-size: 1.0625rem; }
+    .credential { grid-template-columns: 78px minmax(0, 1fr); }
+    .credential img { width: 78px; height: 70px; }
+    .credential strong { font-size: .875rem; }
+
+    /* Notes float over the artwork again — but in a stable column */
+    .hero-visual { position: relative; }
+    .hero-notes {
+      position: absolute;
+      right: 0;
+      bottom: 6%;
+      z-index: 2;
+      grid-template-columns: 1fr;
+      gap: var(--sp-3);
+      width: 232px;
+      margin: 0;
+    }
+
+    /* Metrics */
+    .metrics { padding-block: 0 var(--sp-8); }
+    .metric-plate { padding: var(--sp-7) var(--sp-5) var(--sp-6); }
+    .metric { padding-inline: var(--sp-5); }
+    .metric dd { font-size: .9375rem; }
+
+    /* Concerns — photo, content, photo */
+    .concerns-grid {
+      grid-template-columns: minmax(0, .68fr) minmax(0, 1.4fr) minmax(0, .68fr);
+      gap: var(--sp-6);
+      align-items: start;
+    }
+    .photo-right { display: block; margin-top: var(--sp-10); }
+    .concerns-photo img.portrait { max-width: 100%; }
+    .decor-star  { width: 88px; bottom: -30px; }
+    .decor-orbit { width: 156px; right: -30px; top: -64px; }
+    .concerns-content { padding-top: var(--sp-5); }
+    .questions { gap: var(--sp-4); }
+    .question { padding: var(--sp-4) var(--sp-5); }
+    .question p { font-size: 1rem; }
+    .bridge { font-size: 1rem; padding: var(--sp-5) var(--sp-6); }
+
+    .outcomes-title img { max-width: 680px; }
+
+    /* Outcomes — three across here; five only once there is room (1200+) */
+    .outcome-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-4); }
+    /* Icon anchors the top, heading sits on the baseline of the card */
+    .outcome {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: var(--sp-6);
+      min-height: 260px;
+      padding: var(--sp-5);
+    }
+    .outcome .medal { width: 60px; height: 60px; }
+    .outcome .medal .material-symbols-outlined { font-size: 30px; }
+    .outcome h3 { font-size: 1rem; line-height: 1.5; }
+    .outcome h3 br { display: block; }
+
+    /* Ladder — the ascent runs horizontally from here up.
+       Each rung is lifted by its own step and carries a short fixed stem,
+       so the dots climb alongside the cards and trace the green curve
+       painted into the section's background art. */
+    .ladder-intro { max-width: 62rem; }
+    .ladder-title { font-size: clamp(2.6rem, 4vw, 3.4rem); }
+    .ladder-lead { font-size: 1rem; max-width: 46rem; }
+
+    .ladder {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: clamp(12px, 1.4vw, 22px);
+      align-items: end;
+      margin-top: var(--sp-8);
+      padding-top: var(--sp-6);   /* room for the badge straddling card tops */
+      --rise: 56px;
+    }
+    .rung { margin-bottom: calc(var(--step) * var(--rise)); }
+
+    .rung-stem {
+      display: block;
+      position: relative;
+      width: 0;
+      height: 42px;
+      margin-inline: auto;
+      border-left: 1px dashed rgba(255,255,255,.4);
+    }
+    .rung-stem::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: -13px;
+      width: 13px;
+      height: 13px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: var(--lime);
+      box-shadow: 0 0 0 4px rgba(167,239,52,.2), 0 0 16px rgba(167,239,52,.75);
+    }
+    .rung-card { padding: var(--sp-6) var(--sp-4) var(--sp-5); }
+    .rung-code { font-size: 3rem; }
+    .rung-card h3 { font-size: .875rem; min-height: 2.4em; }
+    .ladder-goal { margin-top: var(--sp-7); }
+
+    /* Ecosystem — three across, on one connected rail */
+    .eco-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-5); }
+    .eco-card { flex-direction: column; align-items: stretch; gap: 0; }
+    .eco-figure { flex: 0 0 auto; margin-bottom: var(--sp-4); }
+    .eco-rail {
+      display: block;
+      position: absolute;
+      left: 16%;
+      right: 16%;
+      top: 96px;
+      height: 1px;
+      background: repeating-linear-gradient(90deg,
+        var(--blue-400) 0 6px, transparent 6px 13px);
+      opacity: .55;
+    }
+    .eco-rail::before, .eco-rail::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 11px;
+      height: 11px;
+      transform: translate(-50%, -50%);
+      border: 3px solid var(--blue-400);
+      border-radius: 50%;
+      background: var(--mist);
+    }
+    .eco-rail::before { left: 25%; }
+    .eco-rail::after  { left: 75%; }
+    .eco-card { padding: var(--sp-5); }
+    .eco-figure { height: 176px; }
+    .eco-loop { font-size: 1.25rem; margin-top: var(--sp-7); }
+
+    /* ACES — the cycle becomes a real orbit */
+    .aces-grid {
+      grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+      gap: var(--sp-8);
+    }
+    .cycle {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 150px var(--sp-6);
+      padding: var(--sp-4) 0;
+    }
+    /* DOM stays 01→02→03→04 for reading order; the grid re-seats the
+       last two so the cycle runs clockwise around the hub. */
+    .step-3 { order: 4; }
+    .step-4 { order: 3; }
+    .cycle-orbit {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(46%, 300px);
+      aspect-ratio: 1;
+      transform: translate(-50%, -50%);
+      border: 2px dashed rgba(30,107,216,.34);
+      border-radius: 50%;
+    }
+    .cycle-hub {
+      display: grid;
+      place-items: center;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 2;
+      width: 128px;
+      height: 128px;
+      transform: translate(-50%, -50%);
+      border-radius: 50%;
+      background: var(--navy-800);
+      border: 10px solid var(--paper);
+      box-shadow: 0 0 0 1px var(--hairline), 0 18px 40px rgba(10,27,61,.16);
+      color: #fff;
+      font-family: var(--display);
+      font-size: 1.375rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+    }
+    .step { padding: var(--sp-5); }
+    .step-head { grid-template-columns: 56px minmax(0, 1fr); }
+    .step-num { width: 56px; height: 56px; font-size: 1.25rem; }
+    .step-head img { height: 118px; }
+    .cycle-caption { font-size: 1rem; margin-top: var(--sp-6); }
+
+    /* Teachers */
+    .teachers-grid {
+      grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+      gap: var(--sp-8);
+    }
+    .faculty { gap: var(--sp-5); align-items: center; }
+    .faculty figure { max-width: 240px; }
+    .faculty-ring {
+      display: block;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(96%, 620px);
+      aspect-ratio: 1.35;
+      transform: translate(-50%, -50%);
+      border: 1px solid rgba(30,107,216,.2);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Register */
+    .register-grid {
+      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+      gap: var(--sp-8);
+    }
+    .form-panel { padding: var(--sp-7); }
+    .form-panel h3 { font-size: 1.375rem; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1.5fr .8fr 1fr; gap: var(--sp-8); }
+    .footer-grid > :first-child { grid-column: auto; }
+  }
+
+  /* ---- ≥ 1200px : full-width art direction ---- */
+  @media (min-width: 1200px) {
+    :root { --gutter: 56px; --pad-y: 120px; }
+
+    .hero { padding-block: var(--sp-9) var(--sp-8); }
+    .hero-grid { gap: var(--sp-8); align-items: center; }
+    .hero h1 .mark-parent { letter-spacing: .38em; }
+    .hero-notes { width: 252px; right: -12px; }
+
+    .concerns-grid { gap: var(--sp-8); }
+
+    /* Now there is room for all five outcomes on one line */
+    .outcomes-title img { max-width: 780px; }
+    .outcome-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+    .outcome { min-height: 292px; }
+
+    /* Intro and ladder sit side by side — this is what keeps the section
+       short. The copy column is fluid so the four rungs never get starved:
+       at 1200px they still hold ~170px, at 1900px ~225px. */
+    .ladder-band .wrap-wide {
+      display: grid;
+      grid-template-columns: clamp(300px, 30%, 440px) minmax(0, 1fr);
+      gap: clamp(28px, 3vw, 64px);
+      align-items: center;
+    }
+    .ladder-intro { max-width: none; }
+    .ladder-title { font-size: clamp(2.5rem, 2.9vw, 3.4rem); }
+    .ladder-lead { max-width: none; }
+    .ladder { margin-top: 0; --rise: 62px; }
+
+    .cycle { gap: 190px var(--sp-7); }
+    .cycle-hub { width: 148px; height: 148px; font-size: 1.5rem; }
+
+    /* Three across, staggered — the arrangement only reads at this width.
+       The copy column gives up space so the baked-in figures stay legible. */
+    .teachers-grid { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); }
+    .faculty { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .faculty figure { max-width: 268px; }
+    .faculty figure:nth-child(3) { grid-column: auto; }
+    .faculty figure:nth-child(1),
+    .faculty figure:nth-child(3) { margin-top: var(--sp-7); }
+  }
+
+  /* --- 19. REDUCED MOTION ----------------------------------- */
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: .01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: .01ms !important;
+    }
+    .js .reveal { opacity: 1; transform: none; }
+  }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Bỏ qua điều hướng, đến nội dung chính</a>
+
+  <header class="masthead" id="top">
+    <div class="wrap-wide masthead-inner">
+      <a class="brand" href="#top" aria-label="iSMART Education — về đầu trang">
+        <img src="assets/ismart-logo-header.png" alt="iSMART Education — Transforming Education" width="124" height="75">
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Điều hướng chính">
+        <a href="#ket-qua">Kết quả</a>
+        <a href="#lo-trinh">Lộ trình</a>
+        <a href="#he-sinh-thai">Hệ sinh thái</a>
+        <a href="#aces">ACES</a>
+        <a href="#giao-vien">Giáo viên</a>
+        <a class="btn btn-primary btn-sm nav-sheet-cta" href="#dang-ky">Đánh giá miễn phí</a>
+      </nav>
+
+      <a class="btn btn-primary btn-sm masthead-cta" href="#dang-ky">Đánh giá miễn phí</a>
+
+      <button class="nav-toggle" id="navToggle" type="button"
+              aria-label="Mở menu" aria-controls="nav" aria-expanded="false">
+        <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO + METRICS: one continuous stage ============ -->
+    <div class="stage">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap-wide hero-grid">
+          <div class="hero-content reveal">
+            <h1 id="hero-title">
+              <span class="mark-parent">iSMART</span>
+              <span class="mark-global">GLOBAL</span>
+              <span class="mark-achievers">ACHIEVERS</span>
+            </h1>
+
+            <p class="hero-copy">
+              Chương trình học Tiếng Anh trực tuyến theo chuẩn đầu ra quốc tế
+              dành cho học sinh THCS.
+            </p>
+
+            <div class="credential">
+              <img src="assets/generated/cognia-accredited-logo.png" alt="" width="78" height="70">
+              <div>
+                <strong>ĐẠT KIỂM ĐỊNH CỦA TỔ CHỨC <em>COGNIA, HOA KỲ</em></strong>
+                <span>Tổ chức kiểm định quốc tế hàng đầu trên thế giới</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#dang-ky">
+                <span class="material-symbols-outlined" aria-hidden="true">event_available</span>
+                Đánh giá năng lực miễn phí
+              </a>
+              <a class="btn btn-ghost" href="#lo-trinh">Khám phá lộ trình</a>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <img src="assets/generated/hero-banner.png"
+                 alt="Học sinh THCS trên hành trình chinh phục tiếng Anh quốc tế"
+                 width="1440" height="1341">
+
+            <div class="hero-notes">
+              <div class="note note-mic">
+                <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">mic</span></span>
+                Luyện phát âm chuẩn bản xứ
+              </div>
+              <div class="note note-cefr">
+                <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">public</span></span>
+                Chuẩn đầu ra quốc tế CEFR
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics" id="so-lieu" aria-labelledby="metrics-title">
+        <div class="wrap">
+          <div class="metric-plate reveal">
+            <span class="plate-scale" aria-hidden="true"></span>
+            <h2 id="metrics-title">iSMART qua những con số</h2>
+            <dl class="metric-grid">
+              <div class="metric">
+                <dt data-count-to="15">15</dt>
+                <dd>năm kinh nghiệm triển khai giáo dục tiếng Anh</dd>
+              </div>
+              <div class="metric">
+                <dt data-count-to="700" data-count-suffix="+">700+</dt>
+                <dd>trường đối tác trên toàn quốc</dd>
+              </div>
+              <div class="metric">
+                <dt data-count-to="200000" data-count-suffix="+">200.000+</dt>
+                <dd>học sinh theo học iSMART</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ CONCERNS ============ -->
+    <section class="band concerns" id="ban-khoan" aria-labelledby="concerns-title">
+      <div class="wrap concerns-grid">
+
+        <figure class="concerns-photo photo-left reveal">
+          <img class="portrait" src="assets/generated/concerns-left-v3.png"
+               alt="Mẹ đồng hành cùng con học tập" width="281" height="463">
+          <img class="decor decor-star" src="assets/generated/concerns-star-v3.png"
+               alt="" aria-hidden="true" width="88" height="88">
+        </figure>
+
+        <div class="concerns-content reveal">
+          <div class="head">
+            <p class="eyebrow">Thấu hiểu</p>
+            <h2 class="title" id="concerns-title">
+              Thấu hiểu điều
+              <strong>ba mẹ <b>đang băn khoăn</b></strong>
+            </h2>
+          </div>
+
+          <ul class="questions">
+            <li class="question">
+              <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">record_voice_over</span></span>
+              <p>Con học nhiều nhưng <b>ngại nói</b></p>
+            </li>
+            <li class="question">
+              <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">query_stats</span></span>
+              <p>Con học nhưng <b>không rõ trình độ, năng lực</b></p>
+            </li>
+            <li class="question">
+              <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">explore</span></span>
+              <p>Con học nhưng <b>không có định hướng, mục tiêu</b></p>
+            </li>
+          </ul>
+
+          <p class="bridge">
+            <strong>iSMART GLOBAL ACHIEVERS</strong>
+            giúp ba mẹ biết rõ năng lực hiện tại của con, xác định mục tiêu phù hợp
+            và theo dõi từng bước tiến bộ trong quá trình học.
+          </p>
+        </div>
+
+        <figure class="concerns-photo photo-right reveal">
+          <img class="portrait" src="assets/generated/concerns-right-v3.png"
+               alt="Mẹ và con chia sẻ niềm vui học tập" width="309" height="463">
+          <img class="decor decor-orbit" src="assets/generated/concerns-orbit-v3.png"
+               alt="" aria-hidden="true" width="156" height="156">
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ OUTCOMES ============ -->
+    <section class="band band-mist outcomes" id="ket-qua" aria-labelledby="outcomes-title">
+      <div class="wrap">
+        <div class="head head-center reveal">
+          <h2 class="title outcomes-title" id="outcomes-title">
+            <!-- outcomes-title-trim.png = outcomes-title.png cropped to its
+                 content box (the original carries ~14% side and ~36% top/bottom
+                 empty margin, which made the lockup render far too small). -->
+            <img src="assets/outcomes-title-trim.png"
+                 alt="Con đạt được gì khi học iSMART Global Achievers"
+                 width="996" height="230">
+          </h2>
+        </div>
+
+        <div class="outcome-grid reveal">
+          <article class="outcome">
+            <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">my_location</span></span>
+            <h3>Học đúng trình độ,<br>có mục tiêu rõ ràng</h3>
+          </article>
+          <article class="outcome">
+            <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">language</span></span>
+            <h3>Phát triển toàn diện<br>4 kỹ năng theo CEFR</h3>
+          </article>
+          <article class="outcome">
+            <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">forum</span></span>
+            <h3>Tăng khả năng giao tiếp và phản xạ tiếng Anh</h3>
+          </article>
+          <article class="outcome">
+            <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">smart_toy</span></span>
+            <h3>Duy trì luyện tập với AI<br>và hệ sinh thái số 24/7</h3>
+          </article>
+          <article class="outcome">
+            <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">workspace_premium</span></span>
+            <h3>Đánh giá tiến bộ, xây nền tảng cho chứng chỉ quốc tế</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CEFR LADDER — the signature ============ -->
+    <section class="band ladder-band" id="lo-trinh" aria-labelledby="ladder-title">
+      <div class="wrap-wide">
+
+        <div class="ladder-intro reveal">
+          <div class="head">
+            <p class="eyebrow">Lộ trình học</p>
+            <h2 class="title ladder-title" id="ladder-title">
+              <span class="lt-parent">iSMART</span>
+              <span class="lt-global">GLOBAL</span> <span class="lt-achievers">ACHIEVERS</span>
+              <span class="lt-stage">THCS</span>
+            </h2>
+          </div>
+          <p class="ladder-lead">
+            Lộ trình tiếng Anh quốc tế bài bản, giúp học sinh bứt phá năng lực
+            và chinh phục chuẩn đầu ra cao nhất.
+          </p>
+          <p class="ladder-goal">
+            <span class="material-symbols-outlined" aria-hidden="true">flag</span>
+            Chuẩn đầu ra cao nhất: <strong>B2 – CEFR</strong>
+          </p>
+        </div>
+
+        <ol class="ladder reveal" aria-label="Bốn cấp độ theo khung CEFR">
+          <li class="rung rung-a1" style="--step:0">
+            <div class="rung-card">
+              <span class="rung-icon" aria-hidden="true"><span class="material-symbols-outlined">eco</span></span>
+              <p class="rung-code">A1</p>
+              <h3>GLOBAL<br>ACHIEVERS 1</h3>
+              <p class="rung-meta">
+                <span><span class="material-symbols-outlined" aria-hidden="true">schedule</span>56 buổi</span>
+                <span><span class="material-symbols-outlined" aria-hidden="true">play_circle</span>84h live</span>
+              </p>
+            </div>
+            <span class="rung-stem" aria-hidden="true"></span>
+          </li>
+
+          <li class="rung rung-a2" style="--step:1">
+            <div class="rung-card">
+              <span class="rung-icon" aria-hidden="true"><span class="material-symbols-outlined">language</span></span>
+              <p class="rung-code">A2</p>
+              <h3>GLOBAL<br>ACHIEVERS 2</h3>
+              <p class="rung-meta">
+                <span><span class="material-symbols-outlined" aria-hidden="true">schedule</span>72 buổi</span>
+                <span><span class="material-symbols-outlined" aria-hidden="true">play_circle</span>108h live</span>
+              </p>
+            </div>
+            <span class="rung-stem" aria-hidden="true"></span>
+          </li>
+
+          <li class="rung rung-b1" style="--step:2">
+            <div class="rung-card">
+              <span class="rung-icon" aria-hidden="true"><span class="material-symbols-outlined">monitoring</span></span>
+              <p class="rung-code">B1</p>
+              <h3>GLOBAL<br>ACHIEVERS 3</h3>
+              <p class="rung-meta">
+                <span><span class="material-symbols-outlined" aria-hidden="true">schedule</span>96 buổi</span>
+                <span><span class="material-symbols-outlined" aria-hidden="true">play_circle</span>144h live</span>
+              </p>
+            </div>
+            <span class="rung-stem" aria-hidden="true"></span>
+          </li>
+
+          <li class="rung rung-b2" style="--step:3">
+            <div class="rung-card">
+              <span class="rung-icon" aria-hidden="true"><span class="material-symbols-outlined">emoji_events</span></span>
+              <p class="rung-code">B2</p>
+              <h3>GLOBAL<br>ACHIEVERS 4</h3>
+              <p class="rung-meta">
+                <span><span class="material-symbols-outlined" aria-hidden="true">schedule</span>120 buổi</span>
+                <span><span class="material-symbols-outlined" aria-hidden="true">play_circle</span>180h live</span>
+              </p>
+            </div>
+            <span class="rung-stem" aria-hidden="true"></span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ ECOSYSTEM ============ -->
+    <section class="band band-mist ecosystem" id="he-sinh-thai" aria-labelledby="eco-title">
+      <div class="wrap">
+        <div class="head head-center reveal">
+          <p class="eyebrow">Hệ sinh thái giáo dục số iSMART</p>
+          <h2 class="title" id="eco-title">
+            Tương tác học tập không gián đoạn<br>hỗ trợ học sinh 24/7
+          </h2>
+          <p class="lead">
+            Từ lớp học đến gia đình — con luôn được đồng hành, không bị ngắt quãng mạch học.
+          </p>
+        </div>
+
+        <div class="eco-grid reveal">
+          <span class="eco-rail" aria-hidden="true"></span>
+
+          <article class="eco-card">
+            <div class="eco-figure">
+              <img src="assets/generated/online-class-cutout.png"
+                   alt="Giáo viên iSMART giảng dạy lớp học trực tuyến" width="384" height="256">
+            </div>
+            <div class="eco-body">
+              <span class="medal"><img src="assets/icons/ecosystem-live-streaming.svg" alt="" width="24" height="24"></span>
+              <div>
+                <h3>Lớp học trực tuyến</h3>
+                <p>Giáo án điện tử hiện đại, con tương tác trực tiếp với giáo viên trong mỗi buổi học.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="eco-card">
+            <div class="eco-figure">
+              <img src="assets/generated/learning-platform-devices.png"
+                   alt="Nền tảng học tập AI và LMS trên máy tính và điện thoại" width="384" height="256">
+            </div>
+            <div class="eco-body">
+              <span class="medal"><img src="assets/icons/ecosystem-artificial-intelligence.svg" alt="" width="24" height="24"></span>
+              <div>
+                <h3>Công nghệ AI &amp; LMS 24/7</h3>
+                <p>AI sửa phát âm tức thì; kho 10.000+ bài giảng luôn sẵn sàng mọi lúc, mọi nơi.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="eco-card">
+            <div class="eco-figure">
+              <img src="assets/generated/family-learning-user-cutout.png"
+                   alt="Gia đình đồng hành cùng con học tiếng Anh tại nhà" width="384" height="256">
+            </div>
+            <div class="eco-body">
+              <span class="medal"><img src="assets/icons/ecosystem-family.svg" alt="" width="24" height="24"></span>
+              <div>
+                <h3>Gia đình đồng hành</h3>
+                <p>Ba mẹ theo dõi chuyên cần và kết quả, tiếp nối mạch học cùng con ngay tại nhà.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <p class="eco-loop reveal">
+          <span class="material-symbols-outlined" aria-hidden="true">sync</span>
+          Kết nối không gián đoạn 24/7
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ ACES CYCLE ============ -->
+    <section class="band aces" id="aces" aria-labelledby="aces-title">
+      <div class="wrap aces-grid">
+
+        <div class="reveal">
+          <div class="head">
+            <p class="eyebrow">Mô hình học tập đặc trưng</p>
+            <h2 class="title" id="aces-title">ACES<br><span class="aces-mark">LEARNING CYCLE</span></h2>
+            <p class="lead">
+              Mô hình học tập liền mạch trước – trong – sau mỗi buổi học, giúp hành trình
+              phát triển của con không dừng lại khi lớp học kết thúc.
+            </p>
+          </div>
+          <p class="cycle-caption">Bốn điểm chạm — Một hành trình tiến bộ liên tục</p>
+        </div>
+
+        <ol class="cycle reveal">
+          <span class="cycle-orbit" aria-hidden="true"></span>
+          <span class="cycle-hub" aria-hidden="true">ACES</span>
+
+          <li class="step step-1">
+            <div class="step-head">
+              <span class="step-num">01</span>
+              <img src="assets/generated/aces-activate.png" alt="" aria-hidden="true" width="384" height="256">
+            </div>
+            <div class="step-body">
+              <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">lightbulb</span></span>
+              <div>
+                <h3>Activate</h3>
+                <p>Khơi gợi kiến thức nền, kích hoạt tư duy và mục tiêu học tập.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="step step-2">
+            <div class="step-head">
+              <span class="step-num">02</span>
+              <img src="assets/generated/aces-communicate.png" alt="" aria-hidden="true" width="384" height="256">
+            </div>
+            <div class="step-body">
+              <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">forum</span></span>
+              <div>
+                <h3>Communicate</h3>
+                <p>Tương tác, trao đổi và luyện tập để nắm vững kiến thức.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="step step-3">
+            <div class="step-head">
+              <span class="step-num">03</span>
+              <img src="assets/generated/aces-extend.png" alt="" aria-hidden="true" width="384" height="256">
+            </div>
+            <div class="step-body">
+              <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span></span>
+              <div>
+                <h3>Extend</h3>
+                <p>Vận dụng mở rộng, giải quyết vấn đề và sáng tạo.</p>
+              </div>
+            </div>
+          </li>
+
+          <li class="step step-4">
+            <div class="step-head">
+              <span class="step-num">04</span>
+              <img src="assets/generated/aces-support.png" alt="" aria-hidden="true" width="384" height="256">
+            </div>
+            <div class="step-body">
+              <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">support_agent</span></span>
+              <div>
+                <h3>Support</h3>
+                <p>Củng cố, phản hồi cá nhân hóa và hỗ trợ kịp thời.</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ TEACHERS ============ -->
+    <section class="band band-mist teachers" id="giao-vien" aria-labelledby="teachers-title">
+      <div class="wrap teachers-grid">
+
+        <div class="reveal">
+          <div class="head">
+            <p class="eyebrow">Đội ngũ giáo viên</p>
+            <h2 class="title" id="teachers-title">Giàu kinh nghiệm,<span>vững chuyên môn</span></h2>
+            <p class="lead">
+              Đội ngũ giáo viên đạt chuẩn, giàu kinh nghiệm và đồng hành cùng học sinh THCS.
+            </p>
+          </div>
+        </div>
+
+        <div class="faculty reveal">
+          <span class="faculty-ring" aria-hidden="true"></span>
+          <figure>
+            <img src="assets/teacher-200.png"
+                 alt="300+ giáo viên nước ngoài trình độ thạc sĩ" width="360" height="360">
+          </figure>
+          <figure>
+            <img src="assets/teacher-300.png"
+                 alt="500+ giáo viên Việt Nam trình độ thạc sĩ" width="360" height="360">
+          </figure>
+          <figure>
+            <img src="assets/teacher-500.png"
+                 alt="2000+ giáo viên nước ngoài và giáo viên Việt Nam trình độ cử nhân" width="360" height="360">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REGISTER ============ -->
+    <section class="band register" id="dang-ky" aria-labelledby="register-title">
+      <div class="wrap register-grid">
+
+        <div class="reveal">
+          <div class="head">
+            <p class="eyebrow">Cùng con vững bước tiên phong</p>
+            <h2 class="title" id="register-title">
+              Nhận bộ đánh giá &amp; trải nghiệm
+              <span>iSMART Global Achievers miễn phí</span>
+            </h2>
+            <p class="lead">
+              Giúp ba mẹ hiểu đúng năng lực hiện tại của con trước khi lựa chọn lộ trình phù hợp.
+            </p>
+          </div>
+
+          <ul class="perks">
+            <li><span class="medal"><span class="material-symbols-outlined" aria-hidden="true">check</span></span>Đánh giá năng lực miễn phí</li>
+            <li><span class="medal"><span class="material-symbols-outlined" aria-hidden="true">check</span></span>Lộ trình theo Khung tham chiếu Châu Âu (CEFR)</li>
+            <li><span class="medal"><span class="material-symbols-outlined" aria-hidden="true">check</span></span>Trải nghiệm hệ sinh thái học tập tích hợp AI</li>
+          </ul>
+
+          <div class="contact">
+            <a href="tel:1900088893">
+              <span class="material-symbols-outlined" aria-hidden="true">call</span>1900 0888 93
+            </a>
+            <a href="https://ismart.edu.vn" target="_blank" rel="noopener">
+              <span class="material-symbols-outlined" aria-hidden="true">public</span>ismart.edu.vn
+            </a>
+          </div>
+        </div>
+
+        <div class="form-panel reveal">
+          <form id="signupForm" novalidate>
+            <h3>Đăng ký nhận bộ đánh giá &amp; trải nghiệm</h3>
+
+            <div aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-grid">
+              <div class="field field-span">
+                <label for="parentName">Họ và tên phụ huynh <span class="req" aria-hidden="true">*</span></label>
+                <input id="parentName" name="parentName" type="text" autocomplete="name"
+                       placeholder="Nhập họ và tên phụ huynh"
+                       required aria-required="true" aria-describedby="parentNameError">
+                <span class="field-error" id="parentNameError">
+                  <span class="material-symbols-outlined" aria-hidden="true">error</span>
+                  Vui lòng nhập họ và tên.
+                </span>
+              </div>
+
+              <div class="field field-span">
+                <label for="phone">Số điện thoại phụ huynh <span class="req" aria-hidden="true">*</span></label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel"
+                       placeholder="Nhập số điện thoại"
+                       required aria-required="true" aria-describedby="phoneError">
+                <span class="field-error" id="phoneError">
+                  <span class="material-symbols-outlined" aria-hidden="true">error</span>
+                  Vui lòng nhập số điện thoại hợp lệ.
+                </span>
+              </div>
+
+              <div class="field field-span">
+                <label for="childName">Họ và tên con</label>
+                <input id="childName" name="childName" type="text" placeholder="Nhập họ và tên con">
+              </div>
+
+              <div class="field">
+                <label for="grade">Lớp</label>
+                <select id="grade" name="grade">
+                  <option value="">Chọn lớp</option>
+                  <option value="6">Lớp 6</option>
+                  <option value="7">Lớp 7</option>
+                  <option value="8">Lớp 8</option>
+                  <option value="9">Lớp 9</option>
+                  <option value="khac">Khác</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="school">Trường</label>
+                <input id="school" name="school" type="text" placeholder="Nhập tên trường">
+              </div>
+
+              <div class="field field-span">
+                <label for="goal">Mục tiêu của con</label>
+                <textarea id="goal" name="goal" rows="2" placeholder="VD: Đạt B1, tự tin giao tiếp…"></textarea>
+              </div>
+
+              <fieldset class="choice-set field-span">
+                <legend class="fieldset-label">Ba mẹ quan tâm đến</legend>
+                <div class="choice-grid">
+                  <div class="choice">
+                    <input id="wantAssessment" type="radio" name="request" value="Đánh giá năng lực miễn phí" checked>
+                    <label for="wantAssessment">Đánh giá năng lực miễn phí</label>
+                  </div>
+                  <div class="choice">
+                    <input id="wantConsulting" type="radio" name="request" value="Tư vấn lộ trình miễn phí">
+                    <label for="wantConsulting">Tư vấn lộ trình miễn phí</label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button class="btn btn-primary btn-block form-submit" type="submit">
+              Gửi thông tin ngay
+              <span class="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+            </button>
+
+            <p class="form-note">Thông tin của ba mẹ được bảo mật và chỉ sử dụng cho mục đích tư vấn.</p>
+          </form>
+
+          <div class="form-done" id="formDone" role="status" tabindex="-1">
+            <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">check</span></span>
+            <h3>Đăng ký thành công!</h3>
+            <p>
+              Cảm ơn ba mẹ. iSMART sẽ liên hệ để xác nhận thông tin và sắp xếp lịch đánh giá
+              trong vòng 24 giờ làm việc.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/ismart-logo-full.png"
+                 alt="iSMART Education — A member of EQuest Education" width="156" height="95">
+          </div>
+          <p>
+            <strong>iSMART GLOBAL ACHIEVERS</strong> — Chương trình học Tiếng Anh trực tuyến
+            theo chuẩn đầu ra quốc tế dành cho học sinh THCS.
+          </p>
+        </div>
+
+        <nav aria-labelledby="footer-explore">
+          <h4 id="footer-explore">Khám phá</h4>
+          <ul>
+            <li><a href="#ket-qua">Kết quả học tập</a></li>
+            <li><a href="#lo-trinh">Lộ trình học</a></li>
+            <li><a href="#he-sinh-thai">Hệ sinh thái số</a></li>
+            <li><a href="#aces">ACES Learning Cycle</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <h4>Liên hệ</h4>
+          <ul>
+            <li>Hotline: <a href="tel:1900088893"><strong class="hot">1900 0888 93</strong></a></li>
+            <li><a href="https://ismart.edu.vn" target="_blank" rel="noopener">ismart.edu.vn</a></li>
+            <li>Facebook: iSMART Education</li>
+            <li>Instagram: ismart.education.official</li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="footer-base">
+        © 2026 iSMART Education — A member of EQuest Education. Đạt kiểm định COGNIA, Hoa Kỳ.
+      </p>
+    </div>
+  </footer>
+
+  <div class="dock" aria-label="Liên hệ nhanh">
+    <a class="dock-call" href="tel:1900088893" aria-label="Gọi iSMART 1900 0888 93">
+      <span class="material-symbols-outlined" aria-hidden="true">call</span>
+    </a>
+    <a class="btn btn-primary" href="#dang-ky">Đánh giá năng lực miễn phí</a>
+  </div>
+
+  <script>
+  (function () {
+    'use strict';
+
+    // Reveal animations only run when JS is alive, so the page is
+    // never blank if this script fails to load.
+    document.documentElement.classList.add('js');
+
+    var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* ---- Sticky header state ---- */
+    var masthead = document.querySelector('.masthead');
+    var onScroll = function () {
+      masthead.classList.toggle('is-stuck', window.scrollY > 8);
+    };
+    addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    /* ---- Mobile navigation ---- */
+    var nav = document.getElementById('nav');
+    var navToggle = document.getElementById('navToggle');
+
+    function setNav(open) {
+      nav.classList.toggle('is-open', open);
+      document.body.classList.toggle('nav-open', open);
+      navToggle.setAttribute('aria-expanded', String(open));
+      navToggle.setAttribute('aria-label', open ? 'Đóng menu' : 'Mở menu');
+      navToggle.querySelector('.material-symbols-outlined').textContent = open ? 'close' : 'menu';
+    }
+
+    navToggle.addEventListener('click', function () {
+      setNav(!nav.classList.contains('is-open'));
+    });
+
+    nav.addEventListener('click', function (e) {
+      if (e.target.closest('a')) setNav(false);
+    });
+
+    addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+        setNav(false);
+        navToggle.focus();
+      }
+    });
+
+    // Close the sheet if the viewport grows past the mobile breakpoint
+    matchMedia('(min-width: 900px)').addEventListener('change', function (e) {
+      if (e.matches) setNav(false);
+    });
+
+    /* ---- Scroll reveal ---- */
+    var revealables = document.querySelectorAll('.reveal');
+
+    if (reduceMotion || !('IntersectionObserver' in window)) {
+      revealables.forEach(function (el) { el.classList.add('is-in'); });
+    } else {
+      var revealer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-in');
+          revealer.unobserve(entry.target);
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -40px' });
+
+      revealables.forEach(function (el) { revealer.observe(el); });
+    }
+
+    /* ---- Metric counters ---- */
+    var counters = document.querySelectorAll('[data-count-to]');
+
+    function runCount(el) {
+      var target = parseInt(el.dataset.countTo, 10);
+      var suffix = el.dataset.countSuffix || '';
+      var duration = 1400;
+      var start = performance.now();
+
+      function frame(now) {
+        var progress = Math.min((now - start) / duration, 1);
+        // easeOutExpo
+        var eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+        el.textContent = Math.round(target * eased).toLocaleString('vi-VN') + suffix;
+        if (progress < 1) requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    }
+
+    if (!reduceMotion && 'IntersectionObserver' in window) {
+      var counterWatcher = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          runCount(entry.target);
+          counterWatcher.unobserve(entry.target);
+        });
+      }, { threshold: 0.6 });
+
+      counters.forEach(function (el) { counterWatcher.observe(el); });
+    }
+
+    /* ---- Form validation ---- */
+    var GOOGLE_SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyuHK9DLfkyP81wiiUbeMEYKF22muqaugEaZSElx0Ow9YMVanxOxdElG2yPjuTLGmTR/exec';
+    var form = document.getElementById('signupForm');
+    var done = document.getElementById('formDone');
+
+    var rules = {
+      parentName: function (v) { return v.trim().length >= 2; },
+      phone: function (v) {
+        var digits = v.replace(/[^\d+]/g, '');
+        return /^(?:\+?84|0)\d{8,10}$/.test(digits);
+      }
+    };
+
+    function validate(input) {
+      var field = input.closest('.field');
+      var ok = rules[input.name](input.value);
+      field.toggleAttribute('data-invalid', !ok);
+      input.setAttribute('aria-invalid', String(!ok));
+      return ok;
+    }
+
+    Object.keys(rules).forEach(function (name) {
+      var input = form.elements[name];
+      // Validate on blur, then live-correct once the field has been touched
+      input.addEventListener('blur', function () { validate(input); });
+      input.addEventListener('input', function () {
+        if (input.closest('.field').hasAttribute('data-invalid')) validate(input);
+      });
+    });
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      var firstBad = null;
+      Object.keys(rules).forEach(function (name) {
+        var input = form.elements[name];
+        if (!validate(input) && !firstBad) firstBad = input;
+      });
+
+      if (firstBad) {
+        firstBad.focus();
+        return;
+      }
+
+      var submitButton = form.querySelector('button[type="submit"]');
+      var originalButtonHtml = submitButton.innerHTML;
+      var controller = new AbortController();
+      var timeoutId = window.setTimeout(function () { controller.abort(); }, 15000);
+
+      submitButton.disabled = true;
+      submitButton.setAttribute('aria-busy', 'true');
+      submitButton.textContent = 'Đang gửi thông tin...';
+
+      try {
+        var formData = new FormData(form);
+        formData.append('pageUrl', window.location.href);
+        formData.append('submittedAt', new Date().toISOString());
+
+        await fetch(GOOGLE_SHEET_ENDPOINT, {
+          method: 'POST',
+          body: formData,
+          mode: 'no-cors',
+          signal: controller.signal
+        });
+
+        form.reset();
+        form.hidden = true;
+        done.style.display = 'block';
+        done.focus();
+      } catch (error) {
+        window.alert(error.name === 'AbortError'
+          ? 'Kết nối đang chậm. Vui lòng thử gửi lại.'
+          : 'Không thể gửi thông tin. Vui lòng kiểm tra kết nối và thử lại.');
+      } finally {
+        window.clearTimeout(timeoutId);
+        submitButton.disabled = false;
+        submitButton.removeAttribute('aria-busy');
+        submitButton.innerHTML = originalButtonHtml;
+      }
+    });
+  })();
+  </script>
+</body>
+</html>
