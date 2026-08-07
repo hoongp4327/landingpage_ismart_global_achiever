@@ -2089,6 +2089,8 @@
               <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
             </div>
 
+            <input id="refCode" name="refCode" type="hidden" value="direct">
+
             <div class="form-grid">
               <div class="field field-span">
                 <label for="parentName">Họ và tên phụ huynh <span class="req" aria-hidden="true">*</span></label>
@@ -2325,6 +2327,29 @@
     var GOOGLE_SHEET_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyuHK9DLfkyP81wiiUbeMEYKF22muqaugEaZSElx0Ow9YMVanxOxdElG2yPjuTLGmTR/exec';
     var form = document.getElementById('signupForm');
     var done = document.getElementById('formDone');
+    var REF_STORAGE_KEY = 'ismartReferralCode';
+    var REF_PATTERN = /^[a-z0-9_-]{2,40}$/;
+
+    function captureReferralCode() {
+      var incomingRef = (new URLSearchParams(window.location.search).get('ref') || '')
+        .trim()
+        .toLowerCase();
+
+      try {
+        var savedRef = (window.localStorage.getItem(REF_STORAGE_KEY) || '').trim().toLowerCase();
+
+        if (!REF_PATTERN.test(savedRef) && REF_PATTERN.test(incomingRef)) {
+          window.localStorage.setItem(REF_STORAGE_KEY, incomingRef);
+          savedRef = incomingRef;
+        }
+
+        return REF_PATTERN.test(savedRef) ? savedRef : 'direct';
+      } catch (error) {
+        return REF_PATTERN.test(incomingRef) ? incomingRef : 'direct';
+      }
+    }
+
+    form.elements.refCode.value = captureReferralCode();
 
     var rules = {
       parentName: function (v) { return v.trim().length >= 2; },
@@ -2376,6 +2401,7 @@
 
       try {
         var formData = new FormData(form);
+        formData.set('refCode', captureReferralCode());
         formData.append('pageUrl', window.location.href);
         formData.append('submittedAt', new Date().toISOString());
 
