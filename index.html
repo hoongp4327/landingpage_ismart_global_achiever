@@ -18,7 +18,7 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23f24722'/%3E%3Cpath d='M23 18h10L26 46H16l7-28Zm15 8h10l-5 20H33l5-20Z' fill='white'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=block" rel="stylesheet">
 
   <style>
@@ -93,8 +93,8 @@
     --pad-y:   64px;
 
     /* Type */
-    --display: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
-    --body:    Inter, "Segoe UI", system-ui, sans-serif;
+    --display: Montserrat, "Segoe UI", system-ui, sans-serif;
+    --body:    Montserrat, "Segoe UI", system-ui, sans-serif;
 
     --t-display: clamp(2.6rem, 11vw, 3.6rem);
     --t-h2:      clamp(1.85rem, 6.4vw, 2.4rem);
@@ -403,25 +403,60 @@
     letter-spacing: -.035em;
     text-wrap: balance;
   }
-  .hero h1 .mark-parent {
-    display: block;
-    margin-bottom: .5em;
-    font-size: .26em;
-    font-weight: 700;
-    letter-spacing: .3em;
-    line-height: 1;
-    color: rgba(190,220,255,.72);
+  .hero h1 .hero-brand {
+    display: flex;
+    align-items: baseline;
+    width: fit-content;
+    line-height: .88;
+    filter: drop-shadow(0 0 13px rgba(203,255,74,.22));
   }
-  .hero h1 .mark-global { display: block; color: var(--lime); }
-  .hero h1 .mark-achievers { display: block; color: #fff; }
+  .hero h1 .brand-i {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(255,255,255,.72);
+  }
+  .hero h1 .mark-global {
+    display: inline;
+    color: var(--lime);
+    font-size: 1em;
+    text-shadow: 0 0 18px rgba(167,239,52,.48);
+  }
+  .hero h1 .hero-program {
+    display: table;
+    max-width: 100%;
+    margin-top: .28em;
+    padding: .54em .82em;
+    color: #fff;
+    background: #2465d8;
+    font-size: .21em;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: .01em;
+    text-shadow: none;
+  }
+
+  .hero-tagline {
+    margin-top: var(--sp-6);
+    max-width: 38rem;
+    color: #fff;
+    font-family: var(--display);
+    font-size: clamp(1.35rem, 3.4vw, 2rem);
+    font-weight: 800;
+    line-height: 1.14;
+    letter-spacing: -.015em;
+  }
+  .hero-tagline span { display: block; }
+  .hero-tagline strong { color: var(--gold); font-weight: 800; }
 
   .hero-copy {
-    margin-top: var(--sp-5);
-    max-width: 34rem;
+    margin-top: var(--sp-3);
+    max-width: 39rem;
+    padding-left: var(--sp-4);
+    border-left: 5px solid var(--gold);
     color: rgba(224,238,255,.82);
     font-size: 1rem;
-    line-height: 1.7;
+    line-height: 1.55;
   }
+  .hero-copy strong { color: #fff; font-weight: 750; }
 
   /* Cognia credential plate */
   .credential {
@@ -595,14 +630,23 @@
 
   .photo-right { display: none; }
 
-  .concerns .title strong {
-    display: block;
-    margin-top: .18em;
-    font-size: .74em;
-    font-weight: 700;
-    color: var(--slate);
+  .concerns .title {
+    font-size: clamp(1.75rem, 5.4vw, 2.7rem);
+    line-height: 1.16;
   }
-  .concerns .title strong b { color: var(--orange); font-weight: 800; }
+  .concerns .title strong { color: var(--orange); font-weight: 800; }
+
+  .concerns-title-art {
+    line-height: 0;
+  }
+
+  .concerns-title-art img {
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    height: auto;
+    margin-inline: auto;
+  }
 
   .questions { display: grid; gap: var(--sp-3); margin-top: var(--sp-5); }
   .question {
@@ -655,48 +699,102 @@
   .outcomes-title { line-height: 0; }
   .outcomes-title img {
     width: 100%;
-    max-width: 560px;
+    max-width: 760px;
     height: auto;
     margin-inline: auto;
   }
 
-  /* Dark cards on a light band: the page's contrast device */
+  .outcomes {
+    background: #f04420 url("ChatGPT Image Aug 11, 2026, 10_24_21 AM.png") center / cover no-repeat;
+  }
+  .outcomes .head {
+    padding: 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  /* Five complete outcome cards, arranged 3 + 2 on desktop. */
   .outcome-grid {
     display: grid;
     gap: var(--sp-3);
     margin-top: var(--sp-6);
   }
   .outcome {
-    display: grid;
-    grid-template-columns: 56px minmax(0, 1fr);
-    gap: var(--sp-4);
-    align-items: center;
-    padding: var(--sp-4);
-    background: var(--navy-900) url("assets/generated/hero-neon-background.jpg") center bottom / cover no-repeat;
-    border: 1px solid var(--edge-dark);
-    border-radius: var(--r-md);
-    color: #fff;
-    box-shadow: 0 10px 26px rgba(6,28,90,.18);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 100%;
+    padding: var(--sp-5);
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid rgba(18,57,126,.12);
+    border-radius: 24px;
+    color: var(--ink);
+    box-shadow: 0 16px 34px rgba(115,35,8,.15);
     transition: transform .28s cubic-bezier(.2,.8,.2,1), box-shadow .28s ease, border-color .28s ease;
   }
+  .outcome::after {
+    content: "";
+    position: absolute;
+    right: -42px;
+    bottom: -48px;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    background: var(--outcome-soft, rgba(148,196,64,.1));
+  }
   .outcome:hover {
-    transform: translateY(-4px);
-    border-color: var(--edge-lit);
-    box-shadow: 0 18px 38px rgba(6,28,90,.26), 0 0 28px rgba(53,198,244,.24);
+    transform: translateY(-6px);
+    border-color: rgba(255,255,255,.86);
+    box-shadow: 0 24px 46px rgba(104,29,4,.23);
   }
   .outcome .medal {
-    width: 52px;
-    height: 52px;
-    background: rgba(255,255,255,.95);
-    color: var(--navy-800);
+    width: 60px;
+    height: 60px;
+    background: var(--outcome-soft, rgba(148,196,64,.16));
+    color: var(--outcome-accent, var(--green));
+    border-radius: 18px 18px 18px 5px;
+    box-shadow: 0 12px 20px color-mix(in srgb, var(--outcome-accent, var(--green)) 18%, transparent);
+  }
+  .outcome .medal .material-symbols-outlined { font-size: 29px; }
+  .outcome-index {
+    position: absolute;
+    top: var(--sp-4);
+    right: var(--sp-5);
+    z-index: 1;
+    color: color-mix(in srgb, var(--outcome-accent, var(--green)) 55%, white);
+    font-family: var(--display);
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    -webkit-text-stroke: 1px var(--outcome-accent, var(--green));
+    color: transparent;
   }
   .outcome h3 {
-    font-size: .9375rem;
-    font-weight: 700;
-    line-height: 1.45;
+    position: relative;
+    z-index: 1;
+    margin-top: var(--sp-5);
+    color: var(--navy-800);
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: 1.42;
     letter-spacing: -.005em;
   }
-  .outcome h3 br { display: none; }
+  .outcome p {
+    position: relative;
+    z-index: 1;
+    margin-top: var(--sp-3);
+    color: var(--slate);
+    font-size: .875rem;
+    line-height: 1.65;
+  }
+  .outcome:nth-child(1) { --outcome-accent: #7daf2b; --outcome-soft: #edf7d8; }
+  .outcome:nth-child(2) { --outcome-accent: #7daf2b; --outcome-soft: #edf7d8; }
+  .outcome:nth-child(3) { --outcome-accent: #4a86d9; --outcome-soft: #e8f1ff; }
+  .outcome:nth-child(4) { --outcome-accent: #6d93d5; --outcome-soft: #eaf1ff; }
+  .outcome:nth-child(5) { --outcome-accent: #e5a52b; --outcome-soft: #fff2d4; }
 
   /* --- 10. CEFR LADDER — the signature ---------------------- */
   .ladder-band {
@@ -714,28 +812,36 @@
   .ladder-band .eyebrow { color: var(--gold); }
   .ladder-band .eyebrow::before { background: var(--gold); }
 
-  .ladder-title { font-size: clamp(2rem, 8vw, 2.75rem); line-height: 1; }
-  .ladder-title .lt-parent {
-    display: block;
-    margin-bottom: .55em;
-    font-size: .3em;
-    font-weight: 700;
-    letter-spacing: .3em;
-    color: rgba(190,220,255,.72);
+  .ladder-title { line-height: 1; }
+  .ladder-title .ladder-brand {
+    display: flex;
+    align-items: baseline;
+    width: fit-content;
+    font-size: clamp(3.2rem, 7vw, 4.8rem);
+    font-weight: 800;
+    line-height: .88;
+    letter-spacing: -.035em;
+    filter: drop-shadow(0 0 13px rgba(203,255,74,.24));
   }
-  .ladder-title .lt-global { display: block; color: var(--lime); }
-  .ladder-title .lt-achievers { display: block; color: #fff; }
-  .ladder-title .lt-stage {
-    display: inline-flex;
-    align-items: center;
-    margin-top: .5em;
-    padding: 8px 20px;
-    border: 1px solid var(--edge-dark);
-    border-radius: var(--r-sm);
-    background: rgba(11,32,80,.55);
-    font-size: .3em;
-    letter-spacing: .22em;
-    line-height: 1;
+  .ladder-title .brand-i {
+    color: #fff;
+    text-shadow: 0 0 12px rgba(255,255,255,.72);
+  }
+  .ladder-title .mark-global {
+    color: var(--lime);
+    text-shadow: 0 0 18px rgba(167,239,52,.5);
+  }
+  .ladder-title .ladder-program {
+    display: table;
+    max-width: 100%;
+    margin-top: .38em;
+    padding: .62em .8em;
+    color: #fff;
+    background: #2465d8;
+    font-size: clamp(.7rem, 1.1vw, .9rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: .01em;
   }
 
   .ladder-lead {
@@ -760,11 +866,13 @@
 
   .rung-card {
     position: relative;
-    padding: var(--sp-6) var(--sp-4) var(--sp-4);
+    display: flex;
+    flex-direction: column;
+    padding: 32px 22px 28px;
     text-align: center;
-    background: var(--surface-dark);
-    border: 1px solid var(--edge-dark);
-    border-radius: var(--r-md);
+    background: rgba(13,39,84,.94);
+    border: 1px solid rgba(132,181,255,.34);
+    border-radius: 32px;
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
     transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
@@ -775,57 +883,48 @@
     box-shadow: 0 0 26px rgba(167,239,52,.16);
   }
 
-  /* Badge straddling the card's top edge */
-  .rung-icon {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    z-index: 2;
-    display: grid;
-    place-items: center;
-    width: 48px;
-    height: 48px;
-    transform: translate(-50%, -58%);
-    color: #fff;
-    background: linear-gradient(180deg, #123572, #071f4d);
-    border: 1px solid rgba(132,181,255,.5);
-    border-radius: 7px 7px 17px 17px;
-    box-shadow: 0 10px 24px rgba(0,7,31,.42);
-  }
-  .rung-icon .material-symbols-outlined { font-size: 25px; }
-
   .rung-code {
+    margin-top: auto;
     font-family: var(--display);
-    font-size: 2.25rem;
+    font-size: 1.55rem;
     font-weight: 800;
     line-height: 1;
-    letter-spacing: -.03em;
+    letter-spacing: .02em;
+    white-space: nowrap;
     color: var(--rung-accent);
   }
   .rung-card h3 {
-    margin-top: var(--sp-2);
-    font-size: .8125rem;
-    font-weight: 700;
-    line-height: 1.35;
-    letter-spacing: .04em;
+    margin-top: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: .01em;
     color: #fff;
   }
-  /* Short gold rule separating the name from the figures */
+  /* Short gold rule separating the course name from its promise. */
   .rung-card h3::after {
     content: "";
     display: block;
-    width: 34px;
-    height: 2px;
-    margin: var(--sp-4) auto 0;
+    width: 82px;
+    height: 4px;
+    margin: 16px auto 0;
     border-radius: 2px;
     background: var(--gold);
   }
+  .rung-promise {
+    margin: 18px 0 24px;
+    color: rgba(232,242,255,.88);
+    font-size: .82rem;
+    font-weight: 700;
+    line-height: 1.35;
+  }
   .rung-meta {
     display: grid;
-    gap: 7px;
-    margin-top: var(--sp-4);
+    gap: 4px;
+    margin-top: 18px;
     color: rgba(214,232,255,.88);
-    font-size: .8125rem;
+    font-size: .9rem;
+    line-height: 1.2;
   }
   .rung-meta span {
     display: flex;
@@ -833,7 +932,7 @@
     justify-content: center;
     gap: 7px;
   }
-  .rung-meta .material-symbols-outlined { font-size: 18px; color: rgba(255,255,255,.7); }
+  .rung-meta strong { color: #fff; font-weight: 800; }
 
   /* Stem + dot: only drawn once the scale runs horizontally */
   .rung-stem { display: none; }
@@ -856,6 +955,8 @@
   .ladder-goal strong { color: var(--gold); font-weight: 800; }
 
   /* --- 11. ECOSYSTEM ---------------------------------------- */
+  .ecosystem .eyebrow::before { display: none; }
+
   .eco-grid {
     position: relative;
     display: grid;
@@ -865,6 +966,8 @@
   .eco-rail { display: none; }
 
   .eco-card {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -976,7 +1079,15 @@
   }
   .step-body .medal .material-symbols-outlined { font-size: 22px; }
   .step h3 { font-size: var(--t-h3); color: var(--step-accent); }
-  .step p { margin-top: 3px; color: var(--slate); font-size: var(--t-small); line-height: 1.55; }
+  .step-kicker {
+    margin-top: 5px;
+    color: var(--navy-800);
+    font-family: var(--display);
+    font-size: .9rem;
+    font-weight: 800;
+    line-height: 1.3;
+  }
+  .step p.step-copy { margin-top: 6px; color: var(--slate); font-size: .78rem; line-height: 1.45; }
 
   .cycle-caption {
     margin-top: var(--sp-5);
@@ -1011,42 +1122,62 @@
   }
 
   /* --- 14. REGISTER ----------------------------------------- */
+  .register {
+    background: linear-gradient(135deg, #214082 0%, #18386f 55%, #102d61 100%);
+    color: #fff;
+  }
   .register-grid { display: grid; gap: var(--sp-6); align-items: start; }
-  .register .title span { display: block; color: var(--orange); }
+  .register-info { padding-block: var(--sp-3); }
+  .register .title { color: #fff; }
+  .register .title span { display: block; color: #fff; }
 
-  .perks { display: grid; gap: var(--sp-3); margin-top: var(--sp-5); }
+  .perks { display: grid; gap: var(--sp-4); margin-top: var(--sp-7); }
   .perks li {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: var(--t-small);
-    font-weight: 600;
+    gap: var(--sp-4);
+    color: #fff;
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-weight: 700;
+    line-height: 1.4;
   }
   .perks .medal {
-    width: 32px;
-    height: 32px;
-    background: #FFF0EC;
-    color: var(--orange);
+    flex: 0 0 auto;
+    width: 58px;
+    height: 58px;
+    background: rgba(255,255,255,.14);
+    color: #fff;
+    border-radius: 20px;
   }
-  .perks .medal .material-symbols-outlined { font-size: 19px; }
+  .perks .medal .material-symbols-outlined { font-size: 28px; }
 
   .contact {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--sp-3) var(--sp-5);
-    margin-top: var(--sp-5);
+    gap: var(--sp-3);
+    margin-top: var(--sp-7);
     font-weight: 700;
-    font-size: var(--t-small);
+    font-size: .95rem;
   }
   .contact a {
     display: flex;
     align-items: center;
     gap: 8px;
-    min-height: 32px;          /* WCAG 2.5.8 target size */
-    transition: color .2s ease;
+    min-height: 48px;
+    padding: 10px 18px;
+    color: #fff;
+    background: rgba(255,255,255,.14);
+    border: 1px solid rgba(255,255,255,.34);
+    border-radius: 999px;
+    transition: background-color .2s ease, border-color .2s ease, transform .2s ease;
   }
-  .contact a:hover { color: var(--orange-ink); }
-  .contact .material-symbols-outlined { font-size: 20px; color: var(--orange-ink); }
+  .contact a:hover {
+    color: #fff;
+    background: rgba(255,255,255,.22);
+    border-color: rgba(255,255,255,.62);
+    transform: translateY(-2px);
+  }
+  .contact .material-symbols-outlined { font-size: 21px; color: #fff; }
 
   .form-panel {
     padding: var(--sp-5);
@@ -1075,11 +1206,20 @@
     width: 100%;
     min-height: 48px;
     padding: 12px 14px;
+    color: var(--ink);
     background: #FBFDFF;
     border: 1px solid #CBDBEE;
     border-radius: var(--r-sm);
     outline: none;
     transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+  }
+  .field select {
+    color: var(--ink);
+    color-scheme: light;
+  }
+  .field select option {
+    color: var(--ink);
+    background: #fff;
   }
   .field textarea { min-height: 84px; resize: vertical; }
   .field input::placeholder, .field textarea::placeholder { color: #93A6C0; }
@@ -1123,6 +1263,7 @@
     border: 1px solid #CBDBEE;
     border-radius: var(--r-sm);
     cursor: pointer;
+    color: var(--ink);
     font-size: .8125rem;
     font-weight: 600;
     line-height: 1.4;
@@ -1183,10 +1324,15 @@
   }
   .footer-grid { display: grid; gap: var(--sp-6); }
   .footer-logo {
-    width: 176px;
-    padding: 10px;
+    width: min(100%, 240px);
+    padding: 0;
     background: #fff;
-    border-radius: var(--r-sm);
+    border-radius: 0;
+  }
+  .footer-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
   .footer p { margin-top: var(--sp-4); max-width: 34rem; line-height: 1.7; }
   .footer p strong { color: #fff; }
@@ -1268,6 +1414,7 @@
     .metric + .metric { border-top: 0; border-left: 1px solid var(--edge-dark); }
 
     .outcome-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .outcome:last-child { grid-column: 1 / -1; width: calc(50% - var(--sp-2)); justify-self: center; }
     .ladder { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--sp-4); }
     .cycle { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
@@ -1325,6 +1472,7 @@
       gap: var(--sp-7);
     }
     .hero-copy { font-size: 1.0625rem; }
+    .hero h1 .hero-program { white-space: nowrap; }
     .credential { grid-template-columns: 78px minmax(0, 1fr); }
     .credential img { width: 78px; height: 70px; }
     .credential strong { font-size: .875rem; }
@@ -1364,23 +1512,32 @@
     .question p { font-size: 1rem; }
     .bridge { font-size: 1rem; padding: var(--sp-5) var(--sp-6); }
 
-    .outcomes-title img { max-width: 680px; }
-
-    /* Outcomes — three across here; five only once there is room (1200+) */
-    .outcome-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--sp-4); }
-    /* Icon anchors the top, heading sits on the baseline of the card */
-    .outcome {
+    .outcomes {
+      min-height: calc(100vh - 80px);
       display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: var(--sp-6);
-      min-height: 260px;
-      padding: var(--sp-5);
+      align-items: center;
+      padding-block: 40px;
     }
-    .outcome .medal { width: 60px; height: 60px; }
-    .outcome .medal .material-symbols-outlined { font-size: 30px; }
-    .outcome h3 { font-size: 1rem; line-height: 1.5; }
-    .outcome h3 br { display: block; }
+    .outcomes-title img { max-width: 760px; }
+
+    /* Outcomes — three cards above, two centered below. */
+    .outcome-grid {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+    .outcome {
+      grid-column: span 2;
+      min-height: 240px;
+      padding: 20px 22px;
+    }
+    .outcome:nth-child(4) { grid-column: 2 / span 2; }
+    .outcome:nth-child(5) { grid-column: 4 / span 2; width: auto; justify-self: stretch; }
+    .outcome .medal { width: 48px; height: 48px; border-radius: 15px 15px 15px 5px; }
+    .outcome .medal .material-symbols-outlined { font-size: 24px; }
+    .outcome-index { top: 20px; right: 22px; font-size: 1.7rem; }
+    .outcome h3 { margin-top: 14px; font-size: 1rem; line-height: 1.34; }
+    .outcome p { margin-top: 8px; font-size: .82rem; line-height: 1.48; }
 
     /* Ladder — the ascent runs horizontally from here up.
        Each rung is lifted by its own step and carries a short fixed stem,
@@ -1388,6 +1545,10 @@
        painted into the section's background art. */
     .ladder-intro { max-width: 62rem; }
     .ladder-title { font-size: clamp(2.6rem, 4vw, 3.4rem); }
+    .ladder-title .ladder-program {
+      white-space: nowrap;
+      font-size: clamp(.64rem, .82vw, .78rem);
+    }
     .ladder-lead { font-size: 1rem; max-width: 46rem; }
 
     .ladder {
@@ -1420,9 +1581,10 @@
       background: var(--lime);
       box-shadow: 0 0 0 4px rgba(167,239,52,.2), 0 0 16px rgba(167,239,52,.75);
     }
-    .rung-card { padding: var(--sp-6) var(--sp-4) var(--sp-5); }
-    .rung-code { font-size: 3rem; }
-    .rung-card h3 { font-size: .875rem; min-height: 2.4em; }
+    .rung-card { min-height: 390px; padding: 32px 18px 26px; }
+    .rung-code { font-size: clamp(1.3rem, 1.55vw, 1.6rem); }
+    .rung-card h3 { min-height: 1.35em; font-size: clamp(1.15rem, 1.45vw, 1.55rem); }
+    .rung-promise { min-height: 5.8em; }
     .ladder-goal { margin-top: var(--sp-7); }
 
     /* Ecosystem — three across, on one connected rail */
@@ -1432,6 +1594,7 @@
     .eco-rail {
       display: block;
       position: absolute;
+      z-index: 0;
       left: 16%;
       right: 16%;
       top: 96px;
@@ -1530,9 +1693,10 @@
 
     /* Register */
     .register-grid {
-      grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
       gap: var(--sp-8);
     }
+    .register-info { padding-top: var(--sp-5); }
     .form-panel { padding: var(--sp-7); }
     .form-panel h3 { font-size: 1.375rem; }
 
@@ -1552,10 +1716,10 @@
 
     .concerns-grid { gap: var(--sp-8); }
 
-    /* Now there is room for all five outcomes on one line */
-    .outcomes-title img { max-width: 780px; }
-    .outcome-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-    .outcome { min-height: 292px; }
+    /* Keep the 3 + 2 composition so complete descriptions remain legible. */
+    .outcomes-title img { max-width: 820px; }
+    .outcome-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+    .outcome { min-height: 245px; }
 
     /* Intro and ladder sit side by side — this is what keeps the section
        short. The copy column is fluid so the four rungs never get starved:
@@ -1567,7 +1731,7 @@
       align-items: center;
     }
     .ladder-intro { max-width: none; }
-    .ladder-title { font-size: clamp(2.5rem, 2.9vw, 3.4rem); }
+    .ladder-title .ladder-brand { font-size: clamp(3.3rem, 4vw, 4.8rem); }
     .ladder-lead { max-width: none; }
     .ladder { margin-top: 0; --rise: 62px; }
 
@@ -1612,10 +1776,10 @@
         <a href="#he-sinh-thai">Hệ sinh thái</a>
         <a href="#aces">ACES</a>
         <a href="#giao-vien">Giáo viên</a>
-        <a class="btn btn-primary btn-sm nav-sheet-cta" href="#dang-ky">Đánh giá miễn phí</a>
+        <a class="btn btn-primary btn-sm nav-sheet-cta" href="#dang-ky">Đánh giá năng lực</a>
       </nav>
 
-      <a class="btn btn-primary btn-sm masthead-cta" href="#dang-ky">Đánh giá miễn phí</a>
+      <a class="btn btn-primary btn-sm masthead-cta" href="#dang-ky">Đánh giá năng lực</a>
 
       <button class="nav-toggle" id="navToggle" type="button"
               aria-label="Mở menu" aria-controls="nav" aria-expanded="false">
@@ -1632,14 +1796,19 @@
         <div class="wrap-wide hero-grid">
           <div class="hero-content reveal">
             <h1 id="hero-title">
-              <span class="mark-parent">iSMART</span>
-              <span class="mark-global">GLOBAL</span>
-              <span class="mark-achievers">ACHIEVERS</span>
+              <span class="hero-brand"><span class="brand-i">i</span><span class="mark-global">GLOBAL</span></span>
+              <span class="hero-program">CHƯƠNG TRÌNH TIẾNG ANH DÀNH CHO HỌC SINH THCS</span>
             </h1>
 
+            <p class="hero-tagline">
+              <span>TỪ HỌC TIẾNG ANH</span>
+              <span>ĐẾN <strong>LÀM CHỦ TIẾNG ANH</strong></span>
+            </p>
+
             <p class="hero-copy">
-              Chương trình học Tiếng Anh trực tuyến theo chuẩn đầu ra quốc tế
-              dành cho học sinh THCS.
+              Lộ trình chuẩn đầu ra quốc tế giúp con từng bước
+              <strong>chuyển kiến thức thành năng lực sử dụng thực tế</strong> — vững vàng 4 kỹ năng,
+              tự tin sử dụng tiếng Anh trong học tập, giao tiếp và hội nhập.
             </p>
 
             <div class="credential">
@@ -1653,9 +1822,9 @@
             <div class="hero-actions">
               <a class="btn btn-primary" href="#dang-ky">
                 <span class="material-symbols-outlined" aria-hidden="true">event_available</span>
-                Đánh giá năng lực miễn phí
+                Đánh giá năng lực
               </a>
-              <a class="btn btn-ghost" href="#lo-trinh">Khám phá lộ trình</a>
+              <a class="btn btn-ghost" href="#dang-ky">Tư vấn lộ trình học tập cá nhân hoá</a>
             </div>
           </div>
 
@@ -1715,10 +1884,13 @@
 
         <div class="concerns-content reveal">
           <div class="head">
-            <p class="eyebrow">Thấu hiểu</p>
-            <h2 class="title" id="concerns-title">
-              Thấu hiểu điều
-              <strong>ba mẹ <b>đang băn khoăn</b></strong>
+            <h2 class="title concerns-title-art" id="concerns-title">
+              <img
+                src="Group 1.png"
+                alt="THCS chỉ có 4 năm. Đừng để con đi hết 4 năm mà vẫn chỉ “học tiếng Anh” nhưng chưa thực sự làm chủ tiếng Anh."
+                width="1162"
+                height="361"
+              >
             </h2>
           </div>
 
@@ -1729,18 +1901,18 @@
             </li>
             <li class="question">
               <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">query_stats</span></span>
-              <p>Con học nhưng <b>không rõ trình độ, năng lực</b></p>
+              <p>Con học nhưng <b>không biết rõ trình độ và năng lực thật</b></p>
             </li>
             <li class="question">
               <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">explore</span></span>
-              <p>Con học nhưng <b>không có định hướng, mục tiêu</b></p>
+              <p><b>Không có lộ trình</b>, con học hết khóa này đến khóa khác mà không biết đích đến.</p>
             </li>
           </ul>
 
           <p class="bridge">
-            <strong>iSMART GLOBAL ACHIEVERS</strong>
-            giúp ba mẹ biết rõ năng lực hiện tại của con, xác định mục tiêu phù hợp
-            và theo dõi từng bước tiến bộ trong quá trình học.
+            <strong>iGLOBAL</strong>
+            giúp ba mẹ biết chính xác năng lực của con đang ở đâu – cần đi tới đâu – và tiến bộ như thế nào
+            qua từng giai đoạn với lộ trình tiếng Anh được thiết kế theo chuẩn đầu ra quốc tế.
           </p>
         </div>
 
@@ -1758,35 +1930,42 @@
       <div class="wrap">
         <div class="head head-center reveal">
           <h2 class="title outcomes-title" id="outcomes-title">
-            <!-- outcomes-title-trim.png = outcomes-title.png cropped to its
-                 content box (the original carries ~14% side and ~36% top/bottom
-                 empty margin, which made the lockup render far too small). -->
-            <img src="assets/outcomes-title-trim.png"
-                 alt="Con đạt được gì khi học iSMART Global Achievers"
-                 width="996" height="230">
+            <img src="Con đạt được gì khi học.png"
+                 alt="Con đạt được gì khi học iGLOBAL — Chương trình tiếng Anh dành cho học sinh THCS"
+                 width="1173" height="196">
           </h2>
         </div>
 
         <div class="outcome-grid reveal">
           <article class="outcome">
             <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">my_location</span></span>
-            <h3>Học đúng trình độ,<br>có mục tiêu rõ ràng</h3>
+            <span class="outcome-index" aria-hidden="true">01</span>
+            <h3>Học đúng trình độ, có mục tiêu rõ ràng</h3>
+            <p>Học sinh được đánh giá đầu vào, xếp lớp theo năng lực thực tế và xây dựng mục tiêu phát triển phù hợp theo từng giai đoạn.</p>
           </article>
           <article class="outcome">
-            <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">language</span></span>
-            <h3>Phát triển toàn diện<br>4 kỹ năng theo CEFR</h3>
+            <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">extension</span></span>
+            <span class="outcome-index" aria-hidden="true">02</span>
+            <h3>Phát triển toàn diện 4 kỹ năng theo CEFR</h3>
+            <p>Phát triển đồng thời Nghe – Nói – Đọc – Viết theo Khung tham chiếu chung Châu Âu về ngôn ngữ, với hệ thống đánh giá bám sát tiến độ.</p>
           </article>
           <article class="outcome">
             <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">forum</span></span>
+            <span class="outcome-index" aria-hidden="true">03</span>
             <h3>Tăng khả năng giao tiếp và phản xạ tiếng Anh</h3>
+            <p>Các hoạt động học tập tích cực giúp học sinh chủ động sử dụng tiếng Anh, tăng thời lượng thực hành và hình thành phản xạ ngôn ngữ tự nhiên.</p>
           </article>
           <article class="outcome">
             <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">smart_toy</span></span>
-            <h3>Duy trì luyện tập với AI<br>và hệ sinh thái số 24/7</h3>
+            <span class="outcome-index" aria-hidden="true">04</span>
+            <h3>Duy trì luyện tập với AI và hệ sinh thái số 24/7</h3>
+            <p>Học sinh luyện phát âm và nhận phản hồi tức thời từ AI, củng cố kiến thức và hoàn thành các hoạt động học tập trên hệ thống sau giờ học.</p>
           </article>
           <article class="outcome">
             <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">workspace_premium</span></span>
+            <span class="outcome-index" aria-hidden="true">05</span>
             <h3>Đánh giá tiến bộ, xây nền tảng cho chứng chỉ quốc tế</h3>
+            <p>Kết quả học tập được đánh giá theo từng giai đoạn, giúp học sinh từng bước xây dựng nền tảng kiến thức và kỹ năng cần thiết cho các kỳ thi đánh giá năng lực quốc tế.</p>
           </article>
         </div>
       </div>
@@ -1800,30 +1979,29 @@
           <div class="head">
             <p class="eyebrow">Lộ trình học</p>
             <h2 class="title ladder-title" id="ladder-title">
-              <span class="lt-parent">iSMART</span>
-              <span class="lt-global">GLOBAL</span> <span class="lt-achievers">ACHIEVERS</span>
-              <span class="lt-stage">THCS</span>
+              <span class="ladder-brand"><span class="brand-i">i</span><span class="mark-global">GLOBAL</span></span>
+              <span class="ladder-program">CHƯƠNG TRÌNH TIẾNG ANH DÀNH CHO HỌC SINH THCS</span>
             </h2>
           </div>
           <p class="ladder-lead">
             Lộ trình tiếng Anh quốc tế bài bản, giúp học sinh bứt phá năng lực
-            và chinh phục chuẩn đầu ra cao nhất.
+            và chinh phục các chứng chỉ quốc tế.
           </p>
           <p class="ladder-goal">
             <span class="material-symbols-outlined" aria-hidden="true">flag</span>
-            Chuẩn đầu ra cao nhất: <strong>B2 – CEFR</strong>
+            <strong>Learn → Use → Master → Go Global</strong>
           </p>
         </div>
 
         <ol class="ladder reveal" aria-label="Bốn cấp độ theo khung CEFR">
           <li class="rung rung-a1" style="--step:0">
             <div class="rung-card">
-              <span class="rung-icon" aria-hidden="true"><span class="material-symbols-outlined">eco</span></span>
-              <p class="rung-code">A1</p>
-              <h3>GLOBAL<br>ACHIEVERS 1</h3>
+              <h3>iGLOBAL 1</h3>
+              <p class="rung-promise">Từ “biết tiếng Anh” đến dám sử dụng tiếng Anh.</p>
+              <p class="rung-code">Pre A1 → A1</p>
               <p class="rung-meta">
-                <span><span class="material-symbols-outlined" aria-hidden="true">schedule</span>56 buổi</span>
-                <span><span class="material-symbols-outlined" aria-hidden="true">play_circle</span>84h live</span>
+                <span>Đầu vào <strong>Pre A1</strong></span>
+                <span>Đầu ra <strong>A1</strong></span>
               </p>
             </div>
             <span class="rung-stem" aria-hidden="true"></span>
@@ -1831,12 +2009,12 @@
 
           <li class="rung rung-a2" style="--step:1">
             <div class="rung-card">
-              <span class="rung-icon" aria-hidden="true"><span class="material-symbols-outlined">language</span></span>
-              <p class="rung-code">A2</p>
-              <h3>GLOBAL<br>ACHIEVERS 2</h3>
+              <h3>iGLOBAL 2</h3>
+              <p class="rung-promise">TỰ TIN SỬ DỤNG TIẾNG ANH TRONG CUỘC SỐNG.</p>
+              <p class="rung-code">A1 → A2</p>
               <p class="rung-meta">
-                <span><span class="material-symbols-outlined" aria-hidden="true">schedule</span>72 buổi</span>
-                <span><span class="material-symbols-outlined" aria-hidden="true">play_circle</span>108h live</span>
+                <span>Đầu vào <strong>A1</strong></span>
+                <span>Đầu ra <strong>A2</strong></span>
               </p>
             </div>
             <span class="rung-stem" aria-hidden="true"></span>
@@ -1844,12 +2022,12 @@
 
           <li class="rung rung-b1" style="--step:2">
             <div class="rung-card">
-              <span class="rung-icon" aria-hidden="true"><span class="material-symbols-outlined">monitoring</span></span>
-              <p class="rung-code">B1</p>
-              <h3>GLOBAL<br>ACHIEVERS 3</h3>
+              <h3>iGLOBAL 3</h3>
+              <p class="rung-promise">TỰ TIN TRÌNH BÀY VÀ THỂ HIỆN QUAN ĐIỂM.</p>
+              <p class="rung-code">A2 → B1</p>
               <p class="rung-meta">
-                <span><span class="material-symbols-outlined" aria-hidden="true">schedule</span>96 buổi</span>
-                <span><span class="material-symbols-outlined" aria-hidden="true">play_circle</span>144h live</span>
+                <span>Đầu vào <strong>A2</strong></span>
+                <span>Đầu ra <strong>B1</strong></span>
               </p>
             </div>
             <span class="rung-stem" aria-hidden="true"></span>
@@ -1857,12 +2035,12 @@
 
           <li class="rung rung-b2" style="--step:3">
             <div class="rung-card">
-              <span class="rung-icon" aria-hidden="true"><span class="material-symbols-outlined">emoji_events</span></span>
-              <p class="rung-code">B2</p>
-              <h3>GLOBAL<br>ACHIEVERS 4</h3>
+              <h3>iGLOBAL 4</h3>
+              <p class="rung-promise">Sẵn sàng hội nhập – Dùng tiếng Anh cho học tập, IELTS và môi trường quốc tế.</p>
+              <p class="rung-code">B1 → B2</p>
               <p class="rung-meta">
-                <span><span class="material-symbols-outlined" aria-hidden="true">schedule</span>120 buổi</span>
-                <span><span class="material-symbols-outlined" aria-hidden="true">play_circle</span>180h live</span>
+                <span>Đầu vào <strong>B1</strong></span>
+                <span>Đầu ra <strong>B2</strong></span>
               </p>
             </div>
             <span class="rung-stem" aria-hidden="true"></span>
@@ -1875,12 +2053,13 @@
     <section class="band band-mist ecosystem" id="he-sinh-thai" aria-labelledby="eco-title">
       <div class="wrap">
         <div class="head head-center reveal">
-          <p class="eyebrow">Hệ sinh thái giáo dục số iSMART</p>
+          <p class="eyebrow">Hệ sinh thái học tập iGlobal</p>
           <h2 class="title" id="eco-title">
-            Tương tác học tập không gián đoạn<br>hỗ trợ học sinh 24/7
+            Học trên lớp – luyện tập tại nhà –<br>tiến bộ được theo dõi liên tục
           </h2>
           <p class="lead">
-            Từ lớp học đến gia đình — con luôn được đồng hành, không bị ngắt quãng mạch học.
+            Từ lớp học đến gia đình, con luôn có giáo viên, nền tảng học tập và ba mẹ
+            cùng đồng hành trên một lộ trình rõ ràng.
           </p>
         </div>
 
@@ -1946,11 +2125,12 @@
             <p class="eyebrow">Mô hình học tập đặc trưng</p>
             <h2 class="title" id="aces-title">ACES<br><span class="aces-mark">LEARNING CYCLE</span></h2>
             <p class="lead">
-              Mô hình học tập liền mạch trước – trong – sau mỗi buổi học, giúp hành trình
-              phát triển của con không dừng lại khi lớp học kết thúc.
+              Hành trình học của con không chỉ giới hạn trong thời gian kết nối với giáo viên.
+              Với mô hình <strong>ACES</strong>, con được chuẩn bị trước buổi học, tương tác trực tiếp
+              trong lớp, tiếp tục củng cố sau giờ học và luôn có phụ huynh đồng hành trong quá trình phát triển.
             </p>
           </div>
-          <p class="cycle-caption">Bốn điểm chạm — Một hành trình tiến bộ liên tục</p>
+          <p class="cycle-caption">Mô hình học tập liền mạch trước – trong – sau mỗi buổi học</p>
         </div>
 
         <ol class="cycle reveal">
@@ -1959,56 +2139,60 @@
 
           <li class="step step-1">
             <div class="step-head">
-              <span class="step-num">01</span>
+              <span class="step-num">A</span>
               <img src="assets/generated/aces-activate.png" alt="" aria-hidden="true" width="384" height="256">
             </div>
             <div class="step-body">
               <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">lightbulb</span></span>
               <div>
-                <h3>Activate</h3>
-                <p>Khơi gợi kiến thức nền, kích hoạt tư duy và mục tiêu học tập.</p>
+                <h3>ACTIVATE</h3>
+                <p class="step-kicker">Chủ động chuẩn bị</p>
+                <p class="step-copy">Trước buổi học, con làm quen với chủ đề, từ vựng và hoạt động khởi động trên hệ thống để bước vào bài học với tâm thế chủ động.</p>
               </div>
             </div>
           </li>
 
           <li class="step step-2">
             <div class="step-head">
-              <span class="step-num">02</span>
+              <span class="step-num">C</span>
               <img src="assets/generated/aces-communicate.png" alt="" aria-hidden="true" width="384" height="256">
             </div>
             <div class="step-body">
               <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">forum</span></span>
               <div>
-                <h3>Communicate</h3>
-                <p>Tương tác, trao đổi và luyện tập để nắm vững kiến thức.</p>
+                <h3>COMMUNICATE</h3>
+                <p class="step-kicker">Tương tác trực tiếp</p>
+                <p class="step-copy">Trong buổi học, con nghe, nói, thực hành, làm việc nhóm và nhận phản hồi trực tiếp từ giáo viên.</p>
               </div>
             </div>
           </li>
 
           <li class="step step-3">
             <div class="step-head">
-              <span class="step-num">03</span>
+              <span class="step-num">E</span>
               <img src="assets/generated/aces-extend.png" alt="" aria-hidden="true" width="384" height="256">
             </div>
             <div class="step-body">
               <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">rocket_launch</span></span>
               <div>
-                <h3>Extend</h3>
-                <p>Vận dụng mở rộng, giải quyết vấn đề và sáng tạo.</p>
+                <h3>EXTEND</h3>
+                <p class="step-kicker">Củng cố và mở rộng</p>
+                <p class="step-copy">Sau buổi học, con tiếp tục luyện tập trên LMS để củng cố kiến thức, cải thiện nội dung còn hạn chế và duy trì mạch học.</p>
               </div>
             </div>
           </li>
 
           <li class="step step-4">
             <div class="step-head">
-              <span class="step-num">04</span>
+              <span class="step-num">S</span>
               <img src="assets/generated/aces-support.png" alt="" aria-hidden="true" width="384" height="256">
             </div>
             <div class="step-body">
               <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">support_agent</span></span>
               <div>
-                <h3>Support</h3>
-                <p>Củng cố, phản hồi cá nhân hóa và hỗ trợ kịp thời.</p>
+                <h3>SUPPORT</h3>
+                <p class="step-kicker">Đồng hành và theo dõi</p>
+                <p class="step-copy">Ba mẹ được cập nhật chuyên cần, kết quả đánh giá và nội dung con cần cải thiện để đồng hành hiệu quả trong quá trình học.</p>
               </div>
             </div>
           </li>
@@ -2025,7 +2209,9 @@
             <p class="eyebrow">Đội ngũ giáo viên</p>
             <h2 class="title" id="teachers-title">Giàu kinh nghiệm,<span>vững chuyên môn</span></h2>
             <p class="lead">
-              Đội ngũ giáo viên đạt chuẩn, giàu kinh nghiệm và đồng hành cùng học sinh THCS.
+              Đội ngũ giáo viên được lựa chọn theo chuẩn chuyên môn, kinh nghiệm giảng dạy THCS
+              và khả năng tổ chức lớp học tương tác cao, giúp học sinh vừa hiểu chắc kiến thức,
+              vừa tự tin sử dụng tiếng Anh trong thực tế.
             </p>
           </div>
         </div>
@@ -2052,27 +2238,21 @@
     <section class="band register" id="dang-ky" aria-labelledby="register-title">
       <div class="wrap register-grid">
 
-        <div class="reveal">
-          <div class="head">
-            <p class="eyebrow">Cùng con vững bước tiên phong</p>
-            <h2 class="title" id="register-title">
-              Nhận bộ đánh giá &amp; trải nghiệm
-              <span>iSMART Global Achievers miễn phí</span>
-            </h2>
-            <p class="lead">
-              Giúp ba mẹ hiểu đúng năng lực hiện tại của con trước khi lựa chọn lộ trình phù hợp.
-            </p>
-          </div>
-
+        <div class="register-info reveal">
+          <h2 class="title" id="register-title">Đánh giá năng lực và tư vấn lộ trình học tập cá nhân hoá</h2>
           <ul class="perks">
-            <li><span class="medal"><span class="material-symbols-outlined" aria-hidden="true">check</span></span>Đánh giá năng lực miễn phí</li>
-            <li><span class="medal"><span class="material-symbols-outlined" aria-hidden="true">check</span></span>Lộ trình theo Khung tham chiếu Châu Âu (CEFR)</li>
-            <li><span class="medal"><span class="material-symbols-outlined" aria-hidden="true">check</span></span>Trải nghiệm hệ sinh thái học tập tích hợp AI</li>
+            <li><span class="medal"><span class="material-symbols-outlined" aria-hidden="true">edit_note</span></span>Đăng ký kiểm tra năng lực miễn phí</li>
+            <li><span class="medal"><span class="material-symbols-outlined" aria-hidden="true">explore</span></span>Nhận lộ trình theo Khung tham chiếu Châu Âu (CEFR)</li>
+            <li><span class="medal"><span class="material-symbols-outlined" aria-hidden="true">school</span></span>Trải nghiệm 1 buổi học</li>
+            <li><span class="medal"><span class="material-symbols-outlined" aria-hidden="true">smart_toy</span></span>Trải nghiệm hệ sinh thái học tập tích hợp AI</li>
           </ul>
 
           <div class="contact">
             <a href="tel:1900088893">
               <span class="material-symbols-outlined" aria-hidden="true">call</span>1900 0888 93
+            </a>
+            <a href="https://zalo.me/1900088893" target="_blank" rel="noopener">
+              <span class="material-symbols-outlined" aria-hidden="true">chat</span>Chat Zalo
             </a>
             <a href="https://ismart.edu.vn" target="_blank" rel="noopener">
               <span class="material-symbols-outlined" aria-hidden="true">public</span>ismart.edu.vn
@@ -2082,7 +2262,7 @@
 
         <div class="form-panel reveal">
           <form id="signupForm" novalidate>
-            <h3>Đăng ký nhận bộ đánh giá &amp; trải nghiệm</h3>
+            <h3>Đăng ký đánh giá năng lực &amp; tư vấn lộ trình</h3>
 
             <div aria-hidden="true" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;">
               <label for="website">Website</label>
@@ -2145,12 +2325,12 @@
                 <legend class="fieldset-label">Ba mẹ quan tâm đến</legend>
                 <div class="choice-grid">
                   <div class="choice">
-                    <input id="wantAssessment" type="radio" name="request" value="Đánh giá năng lực miễn phí" checked>
-                    <label for="wantAssessment">Đánh giá năng lực miễn phí</label>
+                    <input id="wantAssessment" type="radio" name="request" value="Đánh giá năng lực" checked>
+                    <label for="wantAssessment">Đánh giá năng lực</label>
                   </div>
                   <div class="choice">
-                    <input id="wantConsulting" type="radio" name="request" value="Tư vấn lộ trình miễn phí">
-                    <label for="wantConsulting">Tư vấn lộ trình miễn phí</label>
+                    <input id="wantConsulting" type="radio" name="request" value="Tư vấn lộ trình học tập cá nhân hoá">
+                    <label for="wantConsulting">Tư vấn lộ trình học tập cá nhân hoá</label>
                   </div>
                 </div>
               </fieldset>
@@ -2182,8 +2362,9 @@
       <div class="footer-grid">
         <div>
           <div class="footer-logo">
-            <img src="assets/ismart-logo-full.png"
-                 alt="iSMART Education — A member of EQuest Education" width="156" height="95">
+            <img src="assets/ismart-logo-official-footer.png"
+                 alt="iSMART Education — Transforming Education — A member of EQuest Education"
+                 width="1133" height="814">
           </div>
           <p>
             <strong>iSMART GLOBAL ACHIEVERS</strong> — Chương trình học Tiếng Anh trực tuyến
@@ -2222,7 +2403,7 @@
     <a class="dock-call" href="tel:1900088893" aria-label="Gọi iSMART 1900 0888 93">
       <span class="material-symbols-outlined" aria-hidden="true">call</span>
     </a>
-    <a class="btn btn-primary" href="#dang-ky">Đánh giá năng lực miễn phí</a>
+    <a class="btn btn-primary" href="#dang-ky">Đánh giá năng lực</a>
   </div>
 
   <script>
