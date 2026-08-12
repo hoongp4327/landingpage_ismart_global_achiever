@@ -683,6 +683,7 @@
     border-radius: 0 var(--r-md) var(--r-md) 0;
     color: var(--slate);
     font-size: var(--t-small);
+    font-weight: 700;
     line-height: 1.65;
   }
   .bridge strong {
@@ -690,7 +691,9 @@
     margin-bottom: 4px;
     color: var(--ink);
     font-family: var(--display);
+    font-size: clamp(1.45rem, 2vw, 1.9rem);
     font-weight: 800;
+    line-height: 1.1;
   }
 
   /* --- 9. OUTCOMES ------------------------------------------ */
@@ -764,13 +767,12 @@
     top: var(--sp-4);
     right: var(--sp-5);
     z-index: 1;
-    color: color-mix(in srgb, var(--outcome-accent, var(--green)) 55%, white);
+    color: var(--outcome-accent, var(--green));
     font-family: var(--display);
-    font-size: 2rem;
+    font-size: 1rem;
     font-weight: 800;
     line-height: 1;
-    -webkit-text-stroke: 1px var(--outcome-accent, var(--green));
-    color: transparent;
+    letter-spacing: .06em;
   }
   .outcome h3 {
     position: relative;
@@ -1064,9 +1066,45 @@
     background: color-mix(in srgb, var(--step-accent) 14%, transparent);
     color: var(--step-accent);
     font-family: var(--display);
-    font-size: 1.125rem;
+    font-size: 1.8rem;
     font-weight: 800;
     font-variant-numeric: tabular-nums;
+  }
+
+  .cycle-arrow {
+    position: absolute;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border: 3px solid #fff;
+    border-radius: 50%;
+    background: #2f7fe9;
+    box-shadow: 0 5px 14px rgba(30,107,216,.28);
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+  }
+  .cycle-arrow-top {
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .cycle-arrow-right {
+    top: 50%;
+    right: 0;
+    transform: translate(50%, -50%) rotate(90deg);
+  }
+  .cycle-arrow-bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(180deg);
+  }
+  .cycle-arrow-left {
+    top: 50%;
+    left: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
   }
   .step-head img { width: 100%; height: 92px; object-fit: contain; object-position: center bottom; }
 
@@ -1583,7 +1621,7 @@
     .outcome:nth-child(5) { grid-column: 4 / span 2; width: auto; justify-self: stretch; }
     .outcome .medal { width: 48px; height: 48px; border-radius: 15px 15px 15px 5px; }
     .outcome .medal .material-symbols-outlined { font-size: 24px; }
-    .outcome-index { top: 20px; right: 22px; font-size: 1.7rem; }
+    .outcome-index { top: 20px; right: 22px; font-size: .9rem; }
     .outcome h3 { margin-top: 14px; font-size: 1rem; line-height: 1.34; }
     .outcome p { margin-top: 8px; font-size: .82rem; line-height: 1.48; }
 
@@ -1693,6 +1731,7 @@
       border: 2px dashed rgba(30,107,216,.34);
       border-radius: 50%;
     }
+    .cycle-orbit .cycle-arrow { display: grid; }
     .cycle-hub {
       display: grid;
       place-items: center;
@@ -1704,18 +1743,18 @@
       height: 128px;
       transform: translate(-50%, -50%);
       border-radius: 50%;
-      background: var(--navy-800);
+      background: #dcecff;
       border: 10px solid var(--paper);
-      box-shadow: 0 0 0 1px var(--hairline), 0 18px 40px rgba(10,27,61,.16);
-      color: #fff;
+      box-shadow: 0 0 0 1px rgba(47,127,233,.18), 0 18px 40px rgba(10,27,61,.16);
+      color: var(--blue-700);
       font-family: var(--display);
-      font-size: 1.375rem;
+      font-size: 1.65rem;
       font-weight: 800;
       letter-spacing: .04em;
     }
     .step { padding: var(--sp-5); }
     .step-head { grid-template-columns: 56px minmax(0, 1fr); }
-    .step-num { width: 56px; height: 56px; font-size: 1.25rem; }
+    .step-num { width: 56px; height: 56px; font-size: 2rem; }
     .step-head img { height: 118px; }
     .cycle-caption { font-size: 1rem; margin-top: var(--sp-6); }
 
@@ -1784,7 +1823,7 @@
     .ladder { margin-top: 0; --rise: 62px; }
 
     .cycle { gap: 190px var(--sp-7); }
-    .cycle-hub { width: 148px; height: 148px; font-size: 1.5rem; }
+    .cycle-hub { width: 148px; height: 148px; font-size: 1.9rem; }
 
     /* Three across, staggered — the arrangement only reads at this width.
        The copy column gives up space so the baked-in figures stay legible. */
@@ -1934,10 +1973,10 @@
           <div class="head">
             <h2 class="title concerns-title-art" id="concerns-title">
               <img
-                src="Group 1.png"
+                src="concerns-thcs-4-years.png"
                 alt="THCS chỉ có 4 năm. Đừng để con đi hết 4 năm mà vẫn chỉ “học tiếng Anh” nhưng chưa thực sự làm chủ tiếng Anh."
-                width="1162"
-                height="361"
+                width="1127"
+                height="321"
               >
             </h2>
           </div>
@@ -1987,31 +2026,31 @@
         <div class="outcome-grid reveal">
           <article class="outcome">
             <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">my_location</span></span>
-            <span class="outcome-index" aria-hidden="true">01</span>
+            <span class="outcome-index" aria-hidden="true">CEFR</span>
             <h3>Học đúng trình độ, có mục tiêu rõ ràng</h3>
             <p>Học sinh được đánh giá đầu vào, xếp lớp theo năng lực thực tế và xây dựng mục tiêu phát triển phù hợp theo từng giai đoạn.</p>
           </article>
           <article class="outcome">
             <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">extension</span></span>
-            <span class="outcome-index" aria-hidden="true">02</span>
+            <span class="outcome-index" aria-hidden="true">SKILL</span>
             <h3>Phát triển toàn diện 4 kỹ năng theo CEFR</h3>
             <p>Phát triển đồng thời Nghe – Nói – Đọc – Viết theo Khung tham chiếu chung Châu Âu về ngôn ngữ, với hệ thống đánh giá bám sát tiến độ.</p>
           </article>
           <article class="outcome">
             <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">forum</span></span>
-            <span class="outcome-index" aria-hidden="true">03</span>
+            <span class="outcome-index" aria-hidden="true">AI</span>
             <h3>Tăng khả năng giao tiếp và phản xạ tiếng Anh</h3>
             <p>Các hoạt động học tập tích cực giúp học sinh chủ động sử dụng tiếng Anh, tăng thời lượng thực hành và hình thành phản xạ ngôn ngữ tự nhiên.</p>
           </article>
           <article class="outcome">
             <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">smart_toy</span></span>
-            <span class="outcome-index" aria-hidden="true">04</span>
+            <span class="outcome-index" aria-hidden="true">THINK</span>
             <h3>Duy trì luyện tập với AI và hệ sinh thái số 24/7</h3>
             <p>Học sinh luyện phát âm và nhận phản hồi tức thời từ AI, củng cố kiến thức và hoàn thành các hoạt động học tập trên hệ thống sau giờ học.</p>
           </article>
           <article class="outcome">
             <span class="medal"><span class="material-symbols-outlined" aria-hidden="true">workspace_premium</span></span>
-            <span class="outcome-index" aria-hidden="true">05</span>
+            <span class="outcome-index" aria-hidden="true">READY</span>
             <h3>Đánh giá tiến bộ, xây nền tảng cho chứng chỉ quốc tế</h3>
             <p>Kết quả học tập được đánh giá theo từng giai đoạn, giúp học sinh từng bước xây dựng nền tảng kiến thức và kỹ năng cần thiết cho các kỳ thi đánh giá năng lực quốc tế.</p>
           </article>
@@ -2182,7 +2221,12 @@
         </div>
 
         <ol class="cycle reveal">
-          <span class="cycle-orbit" aria-hidden="true"></span>
+          <span class="cycle-orbit" aria-hidden="true">
+            <span class="material-symbols-outlined cycle-arrow cycle-arrow-top">arrow_forward</span>
+            <span class="material-symbols-outlined cycle-arrow cycle-arrow-right">arrow_forward</span>
+            <span class="material-symbols-outlined cycle-arrow cycle-arrow-bottom">arrow_forward</span>
+            <span class="material-symbols-outlined cycle-arrow cycle-arrow-left">arrow_forward</span>
+          </span>
           <span class="cycle-hub" aria-hidden="true">ACES</span>
 
           <li class="step step-1">
