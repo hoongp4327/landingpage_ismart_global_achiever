@@ -678,18 +678,20 @@
   .bridge {
     margin-top: var(--sp-5);
     padding: var(--sp-4) var(--sp-5);
-    background: var(--mist);
-    border-left: 4px solid var(--orange);
-    border-radius: 0 var(--r-md) var(--r-md) 0;
-    color: var(--slate);
+    background: #ffd33d;
+    border: 2px solid #e1aa00;
+    border-left: 7px solid var(--orange);
+    border-radius: var(--r-md);
+    color: #071f4d;
     font-size: var(--t-small);
     font-weight: 700;
     line-height: 1.65;
+    box-shadow: 0 14px 30px rgba(168,116,0,.2);
   }
   .bridge strong {
     display: block;
     margin-bottom: 4px;
-    color: var(--ink);
+    color: #071f4d;
     font-family: var(--display);
     font-size: clamp(1.45rem, 2vw, 1.9rem);
     font-weight: 800;
@@ -1052,7 +1054,7 @@
 
   .step-head {
     display: grid;
-    grid-template-columns: 48px minmax(0, 1fr);
+    grid-template-columns: 64px minmax(0, 1fr);
     gap: var(--sp-3);
     align-items: center;
     margin-bottom: var(--sp-3);
@@ -1060,13 +1062,14 @@
   .step-num {
     display: grid;
     place-items: center;
-    width: 48px;
-    height: 48px;
-    border-radius: var(--r-sm);
-    background: color-mix(in srgb, var(--step-accent) 14%, transparent);
+    width: 64px;
+    height: 64px;
+    border: 2px solid color-mix(in srgb, var(--step-accent) 28%, transparent);
+    border-radius: 20px;
+    background: color-mix(in srgb, var(--step-accent) 22%, white);
     color: var(--step-accent);
     font-family: var(--display);
-    font-size: 1.8rem;
+    font-size: 2.45rem;
     font-weight: 800;
     font-variant-numeric: tabular-nums;
   }
@@ -1076,14 +1079,14 @@
     z-index: 3;
     display: grid;
     place-items: center;
-    width: 34px;
-    height: 34px;
-    border: 3px solid #fff;
+    width: 26px;
+    height: 26px;
+    border: 2px solid rgba(47,127,233,.38);
     border-radius: 50%;
-    background: #2f7fe9;
-    box-shadow: 0 5px 14px rgba(30,107,216,.28);
-    color: #fff;
-    font-size: 20px;
+    background: #edf5ff;
+    box-shadow: none;
+    color: rgba(30,107,216,.68);
+    font-size: 16px;
     font-weight: 700;
   }
   .cycle-arrow-top {
@@ -1753,8 +1756,8 @@
       letter-spacing: .04em;
     }
     .step { padding: var(--sp-5); }
-    .step-head { grid-template-columns: 56px minmax(0, 1fr); }
-    .step-num { width: 56px; height: 56px; font-size: 2rem; }
+    .step-head { grid-template-columns: 74px minmax(0, 1fr); }
+    .step-num { width: 74px; height: 74px; border-radius: 22px; font-size: 3rem; }
     .step-head img { height: 118px; }
     .cycle-caption { font-size: 1rem; margin-top: var(--sp-6); }
 
@@ -1823,6 +1826,8 @@
     .ladder { margin-top: 0; --rise: 62px; }
 
     .cycle { gap: 190px var(--sp-7); }
+    .step-head { grid-template-columns: 80px minmax(0, 1fr); }
+    .step-num { width: 80px; height: 80px; border-radius: 24px; font-size: 3.25rem; }
     .cycle-hub { width: 148px; height: 148px; font-size: 1.9rem; }
 
     /* Three across, staggered — the arrangement only reads at this width.
@@ -1975,8 +1980,8 @@
               <img
                 src="concerns-thcs-4-years.png"
                 alt="THCS chỉ có 4 năm. Đừng để con đi hết 4 năm mà vẫn chỉ “học tiếng Anh” nhưng chưa thực sự làm chủ tiếng Anh."
-                width="1127"
-                height="321"
+                width="998"
+                height="256"
               >
             </h2>
           </div>
