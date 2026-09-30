@@ -1,0 +1,130 @@
+[
+  {
+    "level": "A1",
+    "lead": "Bắt đầu đúng lộ trình",
+    "rest": "xây nền tiếng Anh vững chắc cho THCS",
+    "topics": [
+      "Bản thân & sở thích",
+      "Gia đình & ngôi nhà",
+      "Sinh hoạt hằng ngày",
+      "Ăn uống & thời gian biểu",
+      "Thể thao & vận động",
+      "Trang phục & phong cách"
+    ],
+    "icons": [
+      "person",
+      "home",
+      "schedule",
+      "restaurant",
+      "sports_soccer",
+      "checkroom"
+    ],
+    "benefits": [
+      "Làm quen lộ trình tiếng Anh THCS theo chuẩn quốc tế",
+      "Tăng vốn từ vựng và mẫu câu giao tiếp nền tảng",
+      "Tự tin hơn với nghe – nói – đọc – viết chủ đề quen thuộc",
+      "Sẵn sàng tiến lên các cấp độ cao hơn trong lộ trình CEFR"
+    ],
+    "audience": "Học sinh THCS mới bắt đầu xây nền tiếng Anh hoặc cần học đúng level từ đầu.",
+    "alt": "Nữ sinh ôm sách xanh trước quả địa cầu và các địa danh quốc tế",
+    "slug": "iglobal-1",
+    "number": 1,
+    "banner": "iglobal-1-banner.webp"
+  },
+  {
+    "level": "A2",
+    "lead": "Tiến bộ rõ ràng",
+    "rest": "mở rộng giao tiếp, hiểu và dùng tiếng Anh trong nhiều tình huống hơn",
+    "topics": [
+      "Kế hoạch & mục tiêu cá nhân",
+      "Kỳ nghỉ, du lịch & phương tiện",
+      "Địa điểm, giải trí & trải nghiệm",
+      "Nhiệm vụ hằng ngày & trách nhiệm",
+      "Đồ ăn, thức uống & lối sống",
+      "Công nghệ, tương lai & trái đất xanh"
+    ],
+    "icons": [
+      "flag",
+      "flight_takeoff",
+      "sports_esports",
+      "checklist",
+      "restaurant",
+      "eco"
+    ],
+    "benefits": [
+      "Mở rộng từ vựng và mẫu câu theo bối cảnh thực tế",
+      "Tự tin hơn với giao tiếp, miêu tả và hỏi – đáp",
+      "Tăng năng lực 4 kỹ năng ở mức A2",
+      "Sẵn sàng bước tiếp lên B1"
+    ],
+    "audience": "Học sinh THCS đã có nền A1 và cần phát triển năng lực A2.",
+    "alt": "Nam sinh đeo tai nghe, ôm sách và giơ ngón tay cái trước quả địa cầu",
+    "slug": "iglobal-2",
+    "number": 2,
+    "banner": "iglobal-2-banner.webp"
+  },
+  {
+    "level": "B1",
+    "lead": "Sử dụng độc lập hơn",
+    "rest": "con biết trình bày ý kiến, kết nối ý tưởng và hiểu thế giới quanh mình",
+    "topics": [
+      "Quy tắc, an toàn & trách nhiệm",
+      "Sức khỏe thể chất & tinh thần",
+      "Con người, mối quan hệ & bản sắc",
+      "Điện ảnh, sáng tạo & nghệ thuật",
+      "Môi trường xanh & thay đổi thế giới",
+      "Kỹ năng sống & tầm nhìn mới"
+    ],
+    "icons": [
+      "verified_user",
+      "favorite",
+      "groups",
+      "movie",
+      "eco",
+      "lightbulb"
+    ],
+    "benefits": [
+      "Phát triển khả năng diễn đạt ý kiến rõ ràng hơn",
+      "Tăng năng lực đọc hiểu và viết theo chủ đề",
+      "Tự tin dùng tiếng Anh trong học tập và giao tiếp",
+      "Tạo nền tảng cho mục tiêu quốc tế cao hơn"
+    ],
+    "audience": "Học sinh THCS muốn đạt năng lực B1 và sử dụng tiếng Anh chủ động hơn.",
+    "alt": "Nam sinh mặc hoodie trắng, ôm sách và giơ nắm tay tự tin trước quả địa cầu",
+    "slug": "iglobal-3",
+    "number": 3,
+    "banner": "iglobal-3-banner.webp"
+  },
+  {
+    "level": "B2",
+    "lead": "Tư duy toàn cầu",
+    "rest": "sẵn sàng chinh phục chuẩn cao hơn với tiếng Anh tự tin và bản lĩnh",
+    "topics": [
+      "Tiền bạc & lựa chọn thông minh",
+      "Đời sống số & mạng xã hội",
+      "Truyền thông & tư duy phản biện",
+      "Ẩm thực, sức khỏe & hình ảnh bản thân",
+      "Phiêu lưu, trải nghiệm & khám phá",
+      "Tương lai, tư duy & phát triển bản thân"
+    ],
+    "icons": [
+      "payments",
+      "devices",
+      "forum",
+      "restaurant",
+      "travel_explore",
+      "spa"
+    ],
+    "benefits": [
+      "Sử dụng tiếng Anh hiệu quả hơn trong học tập và trao đổi",
+      "Tăng khả năng thảo luận, phân tích và phản biện",
+      "Phát triển 4 kỹ năng gần hơn với chuẩn B2",
+      "Sẵn sàng cho các mục tiêu tiếng Anh cao hơn"
+    ],
+    "audience": "Học sinh THCS có mục tiêu tiến xa với chuẩn tiếng Anh quốc tế.",
+    "alt": "Nam sinh mặc đồng phục và cà vạt, ôm sách trước quả địa cầu và đường chân trời quốc tế",
+    "slug": "iglobal-4",
+    "number": 4,
+    "banner": "iglobal-4-banner.webp"
+  }
+]
