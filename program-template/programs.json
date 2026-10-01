@@ -29,7 +29,8 @@
     "alt": "Nữ sinh ôm sách xanh trước quả địa cầu và các địa danh quốc tế",
     "slug": "iglobal-1",
     "number": 1,
-    "banner": "iglobal-1-banner.webp"
+    "banner": "iglobal-1-banner.webp",
+    "sessions": 68
   },
   {
     "level": "A2",
@@ -61,7 +62,8 @@
     "alt": "Nam sinh đeo tai nghe, ôm sách và giơ ngón tay cái trước quả địa cầu",
     "slug": "iglobal-2",
     "number": 2,
-    "banner": "iglobal-2-banner.webp"
+    "banner": "iglobal-2-banner.webp",
+    "sessions": 80
   },
   {
     "level": "B1",
@@ -93,7 +95,8 @@
     "alt": "Nam sinh mặc hoodie trắng, ôm sách và giơ nắm tay tự tin trước quả địa cầu",
     "slug": "iglobal-3",
     "number": 3,
-    "banner": "iglobal-3-banner.webp"
+    "banner": "iglobal-3-banner.webp",
+    "sessions": 110
   },
   {
     "level": "B2",
@@ -125,6 +128,7 @@
     "alt": "Nam sinh mặc đồng phục và cà vạt, ôm sách trước quả địa cầu và đường chân trời quốc tế",
     "slug": "iglobal-4",
     "number": 4,
-    "banner": "iglobal-4-banner.webp"
+    "banner": "iglobal-4-banner.webp",
+    "sessions": 124
   }
 ]
