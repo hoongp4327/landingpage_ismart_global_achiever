@@ -1162,6 +1162,230 @@
     box-shadow: 0 22px 48px rgba(11,65,163,.3);
   }
 
+  /* --- 13b. TEACHER STRIP (giáo viên tiêu biểu) ------------- */
+  .tstrip {
+    --gv-card:   var(--paper);
+    --gv-line:   var(--hairline);
+    --gv-navy:   var(--ink);
+    --gv-orange: var(--orange-ink);
+    --gv-muted:  var(--slate);
+    --gv-gap:    clamp(14px, 1.6vw, 22px);
+
+    grid-column: 1 / -1;
+    min-width: 0;
+    margin-top: var(--sp-4);
+  }
+  /* =========================================================
+     NHÃN + VÙNG LƯỚT
+     ========================================================= */
+
+  .teachers__label{
+    margin: 0 0 clamp(16px, 1.8vw, 24px);
+    color: var(--gv-muted);
+    font-size: clamp(14px, 1.16vw, 16px);
+    font-weight: 600;
+    text-align: center;
+  }
+
+  /* KHÔNG đệm ngang, cũng KHÔNG lề âm.
+     - Có đệm thì dải chạy vòng lộ vết nối: ở scrollLeft = 0 dải đệm bên
+       trái trống, còn ở điểm vòng lại chỗ đó là mép thẻ phía trước —
+       nhảy một cái bằng đúng bề rộng đệm.
+     - Lề âm thì khi cột nội dung đã bị bó theo max-width và căn giữa,
+       kéo ra nữa là tràn ngang cả trang.
+     Hai mép để mask lo. */
+  .teachers__viewport{
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    /* KHÔNG dùng scroll-snap: điểm neo sẽ kéo giật dải đang tự trôi */
+  }
+  .teachers__viewport::-webkit-scrollbar{ display: none; }
+
+  /* hai mép mờ dần, để thẻ trôi vào/ra không bị cắt cụt đột ngột */
+  @supports (mask-image: linear-gradient(90deg, #000, #000)){
+    .teachers__viewport{
+      mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+    }
+  }
+
+  .teachers__track{
+    display: flex;
+    gap: var(--gv-gap);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /* 4 thẻ một màn ở desktop */
+  .teachers__item{
+    flex: 0 0 calc((100% - 3 * var(--gv-gap)) / 4);
+  }
+
+  /* =========================================================
+     THẺ
+     ========================================================= */
+
+  .tcard{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid var(--gv-line);
+    border-radius: 18px;
+    overflow: hidden;              /* ảnh bo theo góc thẻ */
+    background: var(--gv-card);
+    color: inherit;
+    text-decoration: none;
+    transition: border-color .2s ease, transform .2s ease;
+  }
+  .tcard:hover{
+    border-color: var(--gv-orange);
+    transform: translateY(-3px);
+  }
+
+  /* --- ô ảnh vuông ------------------------------------------------------- */
+
+  .tcard__media{
+    position: relative;
+    display: block;
+    aspect-ratio: 1;
+    background: var(--gv-orange);   /* lót cùng tông nền ảnh khi đang tải */
+  }
+
+  .tcard__photo{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* nút mũi tên góc trên phải, báo hiệu thẻ bấm được */
+  .tcard__go{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .92);
+    color: var(--gv-orange);
+    transition: background-color .2s ease, color .2s ease;
+  }
+  .tcard__go svg{
+    width: 18px;
+    height: 18px;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    fill: none;
+  }
+  .tcard:hover .tcard__go{
+    background: var(--gv-orange);
+    color: #fff;
+  }
+
+  /* --- phần chữ ---------------------------------------------------------- */
+
+  .tcard__body{
+    display: block;
+    padding: clamp(14px, 1.5vw, 20px) clamp(14px, 1.4vw, 18px) clamp(16px, 1.8vw, 22px);
+    text-align: left;
+  }
+
+  .tcard__name{
+    display: block;
+    color: var(--gv-navy);
+    font-size: clamp(14px, 1.18vw, 17px);
+    font-weight: 800;
+    line-height: 1.25;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+    text-wrap: balance;
+  }
+
+  .tcard__degree{
+    display: block;
+    margin-top: 8px;
+    color: var(--gv-orange);
+    font-size: clamp(12.5px, 1.02vw, 14.5px);
+    font-weight: 700;
+    line-height: 1.4;
+    text-wrap: balance;
+  }
+
+  .tcard__school{
+    display: block;
+    margin-top: 5px;
+    color: var(--gv-muted);
+    font-size: clamp(12px, .95vw, 13.5px);
+    font-weight: 500;
+    line-height: 1.45;
+    text-wrap: pretty;
+  }
+
+  /* =========================================================
+     NÚT DƯỚI DẢI
+     ========================================================= */
+
+  .teachers__more{
+    display: flex;
+    justify-content: center;
+    margin-top: clamp(22px, 2.4vw, 34px);
+  }
+
+  .teachers__more a{
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 34px;
+    border-radius: 999px;
+    background: var(--gv-orange);
+    color: #fff;
+    font-size: clamp(14px, 1.15vw, 17px);
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 10px 24px rgba(255, 72, 0, .26);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .teachers__more a:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(255, 72, 0, .34);
+  }
+  .teachers__more svg{
+    width: 1.1em;
+    height: 1.1em;
+    stroke: currentColor;
+    stroke-width: 2.2;
+    fill: none;
+  }
+
+  /* =========================================================
+     MÀN HẸP
+     ========================================================= */
+
+  @media (max-width: 1023px){
+    .teachers__item{ flex-basis: calc((100% - 2 * var(--gv-gap)) / 3); }
+  }
+
+  @media (max-width: 767px){
+    /* 1 thẻ rưỡi: hé thẻ sau để người dùng biết còn vuốt được */
+    .teachers__item{ flex-basis: calc((100% - var(--gv-gap)) / 1.75); }
+  }
+
+  @media (max-width: 420px){
+    .teachers__item{ flex-basis: 78%; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .tcard,
+    .tcard__go,
+    .teachers__more a{ transition: none; }
+
+    .tcard:hover,
+    .teachers__more a:hover{ transform: none; }
+  }
+
   /* --- 14. REGISTER ----------------------------------------- */
   .register {
     background: linear-gradient(135deg, #214082 0%, #18386f 55%, #102d61 100%);
@@ -2328,6 +2552,192 @@
                  alt="2000+ giáo viên nước ngoài và giáo viên Việt Nam trình độ cử nhân" width="360" height="360">
           </figure>
         </div>
+
+        <!-- Giáo viên tiêu biểu: dải chạy vòng -->
+        <div class="tstrip" id="teachers-strip">
+          <p class="teachers__label">Giáo viên tiêu biểu</p>
+          <div class="teachers__viewport">
+            <ul class="teachers__track">
+                    <li class="teachers__item">
+                      <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+                        <span class="tcard__media">
+                          <img class="tcard__photo" src="assets/teachers/nguyen-thi-tuyet-nhung.webp"
+                               width="600" height="600" loading="lazy" decoding="async"
+                               alt="Chân dung giáo viên Nguyễn Thị Tuyết Nhung">
+                          <span class="tcard__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </span>
+                        </span>
+                        <span class="tcard__body">
+                          <span class="tcard__name">Nguyễn Thị Tuyết Nhung</span>
+                          <span class="tcard__degree">Thạc sĩ Sư phạm Anh</span>
+                          <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="teachers__item">
+                      <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+                        <span class="tcard__media">
+                          <img class="tcard__photo" src="assets/teachers/vu-huong-thao.webp"
+                               width="600" height="600" loading="lazy" decoding="async"
+                               alt="Chân dung giáo viên Vũ Hương Thảo">
+                          <span class="tcard__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </span>
+                        </span>
+                        <span class="tcard__body">
+                          <span class="tcard__name">Vũ Hương Thảo</span>
+                          <span class="tcard__degree">Thạc sĩ Ngôn ngữ Anh</span>
+                          <span class="tcard__school">Trường Đại học Hà Nội</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="teachers__item">
+                      <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+                        <span class="tcard__media">
+                          <img class="tcard__photo" src="assets/teachers/do-thi-tham.webp"
+                               width="600" height="600" loading="lazy" decoding="async"
+                               alt="Chân dung giáo viên Đỗ Thị Thắm">
+                          <span class="tcard__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </span>
+                        </span>
+                        <span class="tcard__body">
+                          <span class="tcard__name">Đỗ Thị Thắm</span>
+                          <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+                          <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="teachers__item">
+                      <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+                        <span class="tcard__media">
+                          <img class="tcard__photo" src="assets/teachers/kieu-kim-anh.webp"
+                               width="600" height="600" loading="lazy" decoding="async"
+                               alt="Chân dung giáo viên Kiều Kim Anh">
+                          <span class="tcard__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </span>
+                        </span>
+                        <span class="tcard__body">
+                          <span class="tcard__name">Kiều Kim Anh</span>
+                          <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+                          <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="teachers__item">
+                      <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+                        <span class="tcard__media">
+                          <img class="tcard__photo" src="assets/teachers/tran-khuong-duy.webp"
+                               width="600" height="600" loading="lazy" decoding="async"
+                               alt="Chân dung giáo viên Trần Khương Duy">
+                          <span class="tcard__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </span>
+                        </span>
+                        <span class="tcard__body">
+                          <span class="tcard__name">Trần Khương Duy</span>
+                          <span class="tcard__degree">Cử nhân Sư phạm tiếng Anh</span>
+                          <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="teachers__item">
+                      <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+                        <span class="tcard__media">
+                          <img class="tcard__photo" src="assets/teachers/le-thi-anh-tuyet.webp"
+                               width="600" height="600" loading="lazy" decoding="async"
+                               alt="Chân dung giáo viên Lê Thị Ánh Tuyết">
+                          <span class="tcard__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </span>
+                        </span>
+                        <span class="tcard__body">
+                          <span class="tcard__name">Lê Thị Ánh Tuyết</span>
+                          <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+                          <span class="tcard__school">Trường Đại học Sư phạm Hà Nội</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="teachers__item">
+                      <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+                        <span class="tcard__media">
+                          <img class="tcard__photo" src="assets/teachers/dinh-thi-nga.webp"
+                               width="600" height="600" loading="lazy" decoding="async"
+                               alt="Chân dung giáo viên Đinh Thị Nga">
+                          <span class="tcard__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </span>
+                        </span>
+                        <span class="tcard__body">
+                          <span class="tcard__name">Đinh Thị Nga</span>
+                          <span class="tcard__degree">Cử nhân Sư phạm Anh</span>
+                          <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="teachers__item">
+                      <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+                        <span class="tcard__media">
+                          <img class="tcard__photo" src="assets/teachers/nguyen-phuong-dung.webp"
+                               width="600" height="600" loading="lazy" decoding="async"
+                               alt="Chân dung giáo viên Nguyễn Phương Dung">
+                          <span class="tcard__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </span>
+                        </span>
+                        <span class="tcard__body">
+                          <span class="tcard__name">Nguyễn Phương Dung</span>
+                          <span class="tcard__degree">Cử nhân Ngôn ngữ Anh</span>
+                          <span class="tcard__school">Trường Đại học Ngoại ngữ – Đại học Quốc gia Hà Nội</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="teachers__item">
+                      <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+                        <span class="tcard__media">
+                          <img class="tcard__photo" src="assets/teachers/duchesne-t-laurente.webp"
+                               width="600" height="600" loading="lazy" decoding="async"
+                               alt="Chân dung giáo viên Duchesne T. Laurente">
+                          <span class="tcard__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </span>
+                        </span>
+                        <span class="tcard__body">
+                          <span class="tcard__name">Duchesne T. Laurente</span>
+                          <span class="tcard__degree">Cử nhân Elementary Education</span>
+                          <span class="tcard__school">Negros Oriental State University</span>
+                        </span>
+                      </a>
+                    </li>
+                    <li class="teachers__item">
+                      <a class="tcard" href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+                        <span class="tcard__media">
+                          <img class="tcard__photo" src="assets/teachers/katreena-sumicad.webp"
+                               width="600" height="600" loading="lazy" decoding="async"
+                               alt="Chân dung giáo viên Katreena Sumicad">
+                          <span class="tcard__go" aria-hidden="true">
+                            <svg viewBox="0 0 24 24"><path d="M8 16 16 8M9 8h7v7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                          </span>
+                        </span>
+                        <span class="tcard__body">
+                          <span class="tcard__name">Katreena Sumicad</span>
+                          <span class="tcard__degree">Cử nhân Business Administration, major in Finance and Marketing</span>
+                          <span class="tcard__school">Xavier University – Ateneo de Cagayan</span>
+                        </span>
+                      </a>
+                    </li>
+                    </ul>
+          </div>
+
+          <div class="teachers__more">
+                  <a href="https://profile-giaovien-ismart.netlify.app/" target="_blank" rel="noopener">
+                    Khám phá đội ngũ giáo viên
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </a>
+                </div>
+        </div>
       </div>
     </section>
 
@@ -2715,5 +3125,148 @@
     });
   })();
   </script>
+
+  <script>
+/* =========================================================
+   DẢI GIÁO VIÊN TIÊU BIỂU — vòng chạy tự trôi (bản rời)
+
+   Danh sách được nhân đôi rồi đẩy scrollLeft từng khung hình, nên
+   dải chạy vòng không có điểm nối: tới mép thì nhảy về mốc tương
+   đương một vòng bên kia, mắt không thấy vì nội dung hai bên giống hệt.
+
+   Vẫn dùng vùng cuộn thật (overflow-x) chứ không phải transform, nhờ
+   vậy người dùng vuốt tay hay lăn chuột ngang vẫn được. Dải dừng khi
+   đưa chuột vào, khi chạm, khi có phần tử trong dải nhận focus bàn
+   phím, và không chạy khi máy bật chế độ giảm chuyển động.
+
+   Hướng chạy: thẻ trôi từ PHẢI sang TRÁI, tức scrollLeft tăng dần.
+   ========================================================= */
+
+/* Không phụ thuộc thư viện nào. Không thấy khối .teachers trên trang
+   thì thoát im lặng, nên nhúng nhầm trang cũng không vỡ gì. */
+
+(function () {
+  'use strict';
+
+  var wrap = document.querySelector('.tstrip');
+  if (!wrap) return;
+
+  var viewport = wrap.querySelector('.teachers__viewport');
+  var track    = wrap.querySelector('.teachers__track');
+  if (!viewport || !track) return;
+
+  var originals = Array.prototype.slice.call(track.children);
+  if (originals.length < 2) return;
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  /* giữ nguyên 10 thẻ, không nhân đôi, không chạy — vẫn vuốt tay được */
+  if (reduceMotion.matches) return;
+
+  var SPEED = 32;            /* px mỗi giây — một vòng 10 thẻ hết ~90 giây */
+  var RESUME_DELAY = 1200;   /* rời chuột bao lâu thì chạy tiếp */
+
+  /* ---------------------------------------------------------
+     Nhân đôi danh sách cho vòng chạy liền mạch
+     --------------------------------------------------------- */
+
+  function cloneTrack() {
+    originals.forEach(function (item) {
+      var copy = item.cloneNode(true);
+      /* bản sao chỉ để mắt nhìn — giấu khỏi trình đọc màn hình, không
+         thì mỗi giáo viên bị đọc hai lần */
+      copy.setAttribute('aria-hidden', 'true');
+      copy.dataset.clone = 'true';
+      Array.prototype.forEach.call(copy.querySelectorAll('a'), function (a) {
+        a.tabIndex = -1;   /* bản sao không nhận focus bàn phím */
+      });
+      track.appendChild(copy);
+    });
+  }
+
+  /* bề rộng một vòng = tổng bề rộng bản gốc, tính cả khoảng cách sau nó */
+  function loopWidth() {
+    var first = originals[0].getBoundingClientRect();
+    var last  = originals[originals.length - 1].getBoundingClientRect();
+    var gap   = parseFloat(window.getComputedStyle(track).columnGap) || 0;
+    return (last.right - first.left) + gap;
+  }
+
+  /* ---------------------------------------------------------
+     Vòng chạy
+     --------------------------------------------------------- */
+
+  var paused = false;
+  var resumeTimer = null;
+  var lastTime = 0;
+
+  function tick(now) {
+    window.requestAnimationFrame(tick);
+
+    if (!lastTime) { lastTime = now; return; }
+    var dt = (now - lastTime) / 1000;
+    lastTime = now;
+
+    if (paused) return;
+    /* khoảng nhảy quá lớn (vừa chuyển tab về) thì bỏ qua một nhịp
+       thay vì giật một phát dài */
+    if (dt <= 0 || dt > 0.1) return;
+
+    var span = loopWidth();
+    if (span <= 0) return;
+
+    var next = viewport.scrollLeft + SPEED * dt;
+    if (next >= span) next -= span;   /* đi hết một vòng → lùi về mốc tương đương */
+
+    viewport.scrollLeft = next;
+  }
+
+  function pause() {
+    paused = true;
+    window.clearTimeout(resumeTimer);
+  }
+
+  function resumeLater() {
+    window.clearTimeout(resumeTimer);
+    resumeTimer = window.setTimeout(function () {
+      paused = false;
+      lastTime = 0;
+    }, RESUME_DELAY);
+  }
+
+  /* ---------------------------------------------------------
+     Khởi động
+     --------------------------------------------------------- */
+
+  function start() {
+    cloneTrack();
+
+    /* bắt đầu từ thẻ đầu tiên; cả quãng [0, một vòng] đều có thẻ nhờ
+       bản sao nằm ngay sau, nên không bao giờ lọt khoảng trống */
+    viewport.scrollLeft = 0;
+
+    window.requestAnimationFrame(tick);
+
+    wrap.addEventListener('mouseenter', pause);
+    wrap.addEventListener('mouseleave', resumeLater);
+    wrap.addEventListener('focusin', pause);
+    wrap.addEventListener('focusout', resumeLater);
+
+    viewport.addEventListener('pointerdown', pause);
+    window.addEventListener('pointerup', resumeLater);
+
+    /* tab ẩn thì rAF ngủ — về lại phải đặt lại mốc thời gian */
+    document.addEventListener('visibilitychange', function () {
+      lastTime = 0;
+    });
+  }
+
+  /* đợi ảnh tải xong mới đo: ảnh chưa có kích thước thì vòng chạy sai */
+  if (document.readyState === 'complete') {
+    start();
+  } else {
+    window.addEventListener('load', start);
+  }
+})();</script>
 </body>
 </html>
